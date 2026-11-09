@@ -21,12 +21,18 @@ with sync_playwright() as p:
         errors = []
         page.on('pageerror', lambda error: errors.append(str(error)))
         page.goto(URL, wait_until='networkidle')
-        page.locator('.start-btn').wait_for(state='visible')
+        page.locator('.entry-begin').wait_for(state='visible', timeout=7000)
+        page.locator('.entry-begin').click()
+        try:
+            page.locator('.skip-intro').wait_for(state='visible', timeout=10000)
+        except Exception:
+            page.locator('.entry-fallback').click()
+            page.locator('.skip-intro').wait_for(state='visible', timeout=10000)
         if width == 390:
             page.screenshot(path=str(OUTPUT/'preview-intro-mobile.png'))
         if width == 1280:
             page.screenshot(path=str(OUTPUT/'preview-intro-desktop.png'))
-        page.locator('.start-btn').click()
+        page.locator('.skip-intro').click()
         page.locator('#student-stt').fill('19')
         page.locator('.lookup-btn').click()
         page.locator('#letter-heading').wait_for(state='visible', timeout=12000)
@@ -49,8 +55,13 @@ with sync_playwright() as p:
     # Phân biệt nhiều STT, so khớp đúng tên trên giao diện và các trường hợp ngoại lệ.
     ctx = browser.new_context(viewport={'width': 390, 'height': 844}, reduced_motion='reduce')
     page = ctx.new_page()
-    page.goto(URL+'galaxy-letters-8-3-2027/', wait_until='networkidle')
-    page.locator('.start-btn').click()
+    page.goto(URL, wait_until='networkidle')
+    page.locator('.entry-begin').click()
+    try:
+        page.locator('.skip-intro').wait_for(state='visible', timeout=8000)
+    except Exception:
+        page.locator('.entry-fallback').click()
+    page.locator('.skip-intro').click()
     page.locator('#student-stt').fill('34')
     page.locator('.lookup-btn').click()
     assert 'chưa có thư riêng' in page.locator('#lookup-error').inner_text()
@@ -68,7 +79,12 @@ with sync_playwright() as p:
     ctx = browser.new_context(viewport={'width': 390,'height':844}, reduced_motion='no-preference')
     page = ctx.new_page()
     page.goto(URL,wait_until='networkidle')
-    page.locator('.start-btn').click()
+    page.locator('.entry-begin').click()
+    try:
+        page.locator('.skip-intro').wait_for(state='visible', timeout=11000)
+    except Exception:
+        page.locator('.entry-fallback').click()
+    page.locator('.skip-intro').click()
     page.locator('#student-stt').fill('19')
     page.locator('.lookup-btn').click()
     page.locator('#morph-object[data-stage="envelope"]').wait_for(timeout=6500)
@@ -85,7 +101,12 @@ with sync_playwright() as p:
     errors=[]
     page.on('pageerror',lambda error: errors.append(str(error)))
     page.goto(standalone,wait_until='load')
-    page.locator('.start-btn').click()
+    page.locator('.entry-begin').click()
+    try:
+        page.locator('.skip-intro').wait_for(state='visible', timeout=8000)
+    except Exception:
+        page.locator('.entry-fallback').click()
+    page.locator('.skip-intro').click()
     page.locator('#student-stt').fill('19')
     page.locator('.lookup-btn').click()
     page.locator('#letter-heading').wait_for(state='visible',timeout=6000)

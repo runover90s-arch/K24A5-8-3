@@ -21,7 +21,7 @@
 | 15. Cấu hình tập trung | `src/data/eventConfig.ts`; countdown tùy chọn, không khóa trước/sau ngày sự kiện |
 | 16. Micro-interaction | Nút có glow/hover, constellation SVG draw, comet particle, light bloom, phong thư seal, paper unfolding |
 | 17. SEO/chia sẻ | `index.html`, `public/favicon.svg`, `public/og-cover.svg`, `public/og-cover.png`; no recipient metadata |
-| 18. Kiểm thử | `tests/` gồm unit/data/asset/DOM logic, **33/33** thành công; Chromium URLBlocklist chặn kiểm thử browser thực trong môi trường hiện tại |
+| 18. Kiểm thử | `tests/` gồm unit/data/asset/DOM logic, **34/34** thành công; Chromium URLBlocklist chặn localhost; đã kiểm thử trực tiếp HTML độc lập bằng set_content ở 4 viewport, chưa thay thế kiểm thử trên điện thoại thật |
 | 19. Thứ tự ưu tiên | Đúng STT, các thư, mobile, deploy, morph, động nền, âm thanh tùy chọn |
 | 20. Đầu ra | Mã nguồn, `dist/` (build), `standalone/index.html`, workflow, README và hồ sơ QA; chưa đăng lên GitHub vì chưa có repository được chỉ định |
 | 21. Cảm xúc | Thư riêng trên giấy, hiệu ứng nền dịu khi đọc, lời chúc cuối yên tĩnh |
@@ -29,7 +29,7 @@
 ## Kết quả đã chạy
 
 - `npm ci --offline --ignore-scripts` → PASS.
-- `npm test` → 33/33 PASS (gồm DOM integration mô phỏng khi Reduced Motion bật).
+- `npm test` → 34/34 PASS (gồm DOM integration mô phỏng khi Reduced Motion bật).
 - `tsc -p tsconfig.json --pretty false` → PASS (TypeScript 5.8.3 có sẵn trong hệ tạo dự án).
 - `npm run build` → PASS (Node 22.16.0), tạo `dist` và bản độc lập.
 - `node --check` mã JavaScript sau compile → PASS (khi chạy công đoạn kiểm tra cuối).
@@ -47,3 +47,26 @@
 7. Kiểm tra OG preview trên domain xuất bản và điều chỉnh nếu dùng custom domain.
 
 **Ngoại lệ đối với đúng từng công nghệ trong prompt:** Không dùng React, Vite, Motion for React, Vitest. Các công nghệ ấy được đánh dấu là *ưu tiên* trong prompt, không phải bắt buộc, và được thay bằng những công cụ native, ít phụ thuộc. Không khẳng định đã đáp ứng tiêu chí công nghệ theo nghĩa đen.
+
+
+## Cinematic intro acceptance
+
+- Initial frame is pure black before the first story line.
+- Story lines appear sequentially with enough time to read each one.
+- The galaxy image is revealed gradually near the end of the intro.
+- The original soundtrack is user-initiated and can be muted at any time.
+- The intro can be skipped without waiting for the timed sequence.
+- Reduced Motion removes camera and text movement while preserving the story and controls.
+- The standalone HTML embeds both the image and MP3 assets.
+
+- **New entry gate:** no intro timers and no audio playback before the welcome button is tapped; `audio.play()` is invoked synchronously within the user gesture.
+- Browserless smoke tests simulate both successful audio playback and rejection (blocked autoplay) to verify retry/silent fallback.
+
+### Bổ sung kiểm thử Chromium (bản bắt đầu bằng nhạc)
+
+- Dùng Playwright Chromium headless mở nội dung `standalone/index.html` bằng `page.set_content()` do URLBlocklist chặn URL localhost.
+- Các viewport kiểm thử: `320×568`, `390×844`, `844×390`, `1280×800` ở chế độ Reduced Motion.
+- Chạm `Bước vào vũ trụ`, xác nhận `.audio-toggle` có `aria-pressed=true`, intro chạy, skip qua lookup, STT 19 hiển thị đúng `Gửi Ánh Minh,`. Không xuất hiện JS exception hay horizontal overflow.
+- Kiểm tra timeline qua virtual clock: phase `black` ban đầu, `data-reveal=true` khoảng 40,5 giây, phase `final` sau 56,5 giây.
+- Đã xử lý race condition timer trong intro: câu chữ không được xuất hiện đè lên tiêu đề cuối khi timer bị trì hoãn.
+- **Chưa có kiểm thử thực địa trên iOS Safari, Messenger/Zalo in-app browser, chất lượng nhạc trên loa điện thoại và FPS trên máy yếu.**

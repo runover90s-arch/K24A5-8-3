@@ -6,6 +6,7 @@ import { el, wait } from './utils/dom.js';
 import { observeReducedMotion } from './hooks/useReducedMotion.js';
 import { createGalaxyBackground } from './components/GalaxyBackground.js';
 import { createIntroScene } from './components/IntroScene.js';
+import { createSoundEntryScene } from './components/SoundEntryScene.js';
 import { createStudentLookup } from './components/StudentLookup.js';
 import { createMorphTransition } from './components/MorphTransition.js';
 import { createLetterView } from './components/LetterView.js';
@@ -13,7 +14,7 @@ import { createClosingScene } from './components/ClosingScene.js';
 import { createStarField } from './components/StarField.js';
 import { createAudioToggle } from './components/AudioToggle.js';
 
-type AppStage = 'intro' | 'lookup' | 'recognize' | 'letter' | 'closing';
+type AppStage = 'gate' | 'intro' | 'lookup' | 'recognize' | 'letter' | 'closing';
 
 /**
  * Điều phối các cảnh theo một state machine tối giản và huỷ được.
@@ -21,7 +22,9 @@ type AppStage = 'intro' | 'lookup' | 'recognize' | 'letter' | 'closing';
  */
 export function mountApp(host: HTMLElement): () => void {
   const shell = el('div', 'app-shell');
-  shell.dataset.scene = 'intro';
+  const requiresSoundEntry = eventConfig.enableIntro && eventConfig.enableAudio;
+  const initialStage: AppStage = requiresSoundEntry ? 'gate' : eventConfig.enableIntro ? 'intro' : 'lookup';
+  shell.dataset.scene = initialStage;
   const galaxy = createGalaxyBackground();
   const starField = createStarField();
   const morph = createMorphTransition();
@@ -31,7 +34,8 @@ export function mountApp(host: HTMLElement): () => void {
   brand.append(el('span', 'brand-mark', '✦'), el('span', 'brand-name', 'GALAXY LETTERS'));
   const meta = el('div', 'header-meta', 'MỘT MÓN QUÀ ĐẶC BIỆT · 08.03.2027');
   header.append(brand, meta);
-  if (eventConfig.enableAudio) header.append(createAudioToggle());
+  const audioController = eventConfig.enableAudio ? createAudioToggle() : null;
+  if (audioController) header.append(audioController.button);
   const story = el('main', 'story-root');
   story.id = 'main-content';
   const toast = el('div', 'toast-message');
@@ -50,7 +54,7 @@ export function mountApp(host: HTMLElement): () => void {
   recognizeInner.append(recognizeTag, recognizeName, recognizeSub);
   recognizing.append(recognizeInner);
 
-  let stage: AppStage = 'intro';
+  let stage: AppStage = initialStage;
   let recipient: Recipient | null = null;
   let motionController: AbortController | null = null;
   let motionReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -58,6 +62,11 @@ export function mountApp(host: HTMLElement): () => void {
   let sceneUpdateTimer = 0;
 
   const intro = createIntroScene(() => enterLookup());
+  const entry = createSoundEntryScene(
+    () => audioController ? audioController.playFromGesture() : Promise.resolve(false),
+    () => beginIntro(),
+    () => { audioController?.stop(); beginIntro(); }
+  );
   const lookup = createStudentLookup((stt) => { void beginReveal(stt); });
   const closing = createClosingScene(() => enterLookup());
   const letterView = createLetterView({
@@ -74,11 +83,11 @@ export function mountApp(host: HTMLElement): () => void {
     onWish: () => showClosing()
   });
   morph.sheet.append(letterView.root);
-  story.append(intro, lookup.root, recognizing, closing.root);
+  story.append(entry, intro, lookup.root, recognizing, closing.root);
   foreground.append(header, story, footer, skipMotion, toast);
   shell.append(galaxy.root, starField.root, morph.root, foreground);
   host.replaceChildren(shell);
-  const allScenes = [intro, lookup.root, recognizing, closing.root];
+  const allScenes = [entry, intro, lookup.root, recognizing, closing.root];
   function setActiveScene(target: HTMLElement | null): void {
     for (const scene of allScenes) {
       const active = scene === target;
@@ -90,8 +99,9 @@ export function mountApp(host: HTMLElement): () => void {
   function setStage(value: AppStage): void {
     stage = value;
     shell.dataset.scene = value;
-    morph.stage(value);
+    morph.stage(value === 'gate' ? 'intro' : value);
     skipMotion.hidden = value !== 'recognize' || motionReduced;
+    if (value === 'gate') setActiveScene(entry);
     if (value === 'intro') setActiveScene(intro);
     if (value === 'lookup') setActiveScene(lookup.root);
     if (value === 'recognize') setActiveScene(recognizing);
@@ -102,7 +112,13 @@ export function mountApp(host: HTMLElement): () => void {
     motionController?.abort(); motionController = null;
     window.clearTimeout(sceneUpdateTimer);
   }
+  function beginIntro(): void {
+    setStage('intro');
+    intro.beginIntro(motionReduced);
+    if (document.activeElement instanceof HTMLElement) document.activeElement.blur();
+  }
   function enterLookup(): void {
+    intro.destroyIntro();
     stopMotion();
     morph.setOpened(false);
     starField.hide();
@@ -198,8 +214,8 @@ export function mountApp(host: HTMLElement): () => void {
     skipMotion.hidden = value || stage !== 'recognize';
     if (value && stage === 'recognize') finishLetter();
   });
-  setActiveScene(intro); // Ẩn semantic các scene khác ngay ở lần đầu, tránh screen reader đọc nhầm.
-  if (!eventConfig.enableIntro) enterLookup();
+  setStage(initialStage); // Chưa chạy timer intro trước thao tác chạm bật nhạc.
+  if (initialStage === 'intro') beginIntro();
   if (eventConfig.showCountdown) {
     const countdown = el('div', 'countdown');
     footer.prepend(countdown);
@@ -214,7 +230,7 @@ export function mountApp(host: HTMLElement): () => void {
   // Một kiểm tra nhẹ ở runtime, hữu ích khi chủ repo chỉnh sửa dữ liệu.
   if (recipients.length !== 24) console.warn('Số người nhận hiện khác 24, hãy kiểm tra dữ liệu trước khi phát hành.');
   return () => {
-    stopMotion();unobserveMotion();galaxy.destroy();
+    intro.destroyIntro();stopMotion();unobserveMotion();galaxy.destroy();audioController?.destroy();
     window.removeEventListener('keydown', onKeydown);
     window.clearTimeout(showToastTimer);
     shell.remove();

@@ -17,6 +17,7 @@ class FakeNode {
     this.classList=new FakeClassList(this);
   }
   append(...nodes){for(const n of nodes){if(!n)continue;n.parent=this;this.children.push(n);}}
+  prepend(...nodes){for(const n of [...nodes].reverse()){if(!n)continue;n.parent=this;this.children.unshift(n);}}
   replaceChildren(...nodes){this.children=[];this.append(...nodes);}
   remove(){if(this.parent)this.parent.children=this.parent.children.filter(n=>n!==this);}
   setAttribute(name,value){this.attributes[name]=String(value);if(name==='id')this.id=value;}
@@ -44,7 +45,20 @@ const media={matches:true,addEventListener(){},removeEventListener(){}};
 globalThis.HTMLElement=FakeNode;
 globalThis.document={
   activeElement:null,
-  createElement:tag=>new FakeNode(tag),
+  createElement:tag=>{
+    const node=new FakeNode(tag);
+    if(tag==='audio'){
+      node.paused=true;
+      node.play=()=>{
+        globalThis.__audioPlayCalls=(globalThis.__audioPlayCalls||0)+1;
+        if(globalThis.__audioFail) return Promise.reject(new Error('NotAllowedError'));
+        node.paused=false; return Promise.resolve();
+      };
+      node.pause=()=>{node.paused=true;};
+      node.load=()=>{};
+    }
+    return node;
+  },
   createElementNS:(_,tag)=>new FakeNode(tag),
   addEventListener(){}, removeEventListener(){},hidden:false
 };
@@ -61,16 +75,26 @@ Object.defineProperty(globalThis,'navigator',{configurable:true,value:{hardwareC
 
 const {mountApp}=await import('../dist/src/App.js');
 
-test('đi xuyên suốt 5 trạng thái (reduced motion) với DOM thật về mặt logic',()=>{
+test('phải chạm để phát nhạc rồi mới chạy intro; các scene và thư hoạt động',async()=>{
+  globalThis.__audioFail=false;
+  globalThis.__audioPlayCalls=0;
   const host=new FakeNode('div');
   const destroy=mountApp(host);
   const shell=host.children[0];
-  assert.equal(shell.dataset.scene,'intro');
+  assert.equal(shell.dataset.scene,'gate');
+  assert.equal(globalThis.__audioPlayCalls,0,'không được phát nhạc khi chưa tương tác');
   const intro=host.querySelector('#scene-intro');
   const lookup=host.querySelector('#scene-lookup');
-  assert.equal(intro.classList.contains('scene--active'),true);
+  assert.equal(intro.classList.contains('scene--active'),false);
   assert.equal(lookup.inert,true);
-  host.querySelector('.start-btn').dispatch('click');
+  assert.equal(intro.dataset.phase,'black');
+  host.querySelector('.entry-begin').dispatch('click');
+  assert.equal(globalThis.__audioPlayCalls,1,'audio.play() phải được gọi ngay trong click');
+  await Promise.resolve(); await Promise.resolve();
+  assert.equal(shell.dataset.scene,'intro');
+  assert.equal(host.querySelector('.audio-toggle').getAttribute('aria-pressed'),'true');
+  assert.equal(intro.classList.contains('scene--active'),true);
+  host.querySelector('.skip-intro').dispatch('click');
   assert.equal(shell.dataset.scene,'lookup');
   assert.equal(lookup.inert,false);
   const input=host.querySelector('#student-stt');
@@ -92,4 +116,29 @@ test('đi xuyên suốt 5 trạng thái (reduced motion) với DOM thật về m
   host.querySelector('.lookup-form').dispatch('submit');
   assert.equal(host.querySelector('#letter-heading').textContent,'Gửi Nhất Linh,');
   destroy();
+});
+
+
+test('khi trình duyệt chặn âm thanh có nút thử lại và đường đi không kẹt', async()=>{
+  globalThis.__audioFail=true;
+  globalThis.__audioPlayCalls=0;
+  const host=new FakeNode('div');
+  const destroy=mountApp(host);
+  const shell=host.children[0];
+  host.querySelector('.entry-begin').dispatch('click');
+  assert.equal(globalThis.__audioPlayCalls,1);
+  await Promise.resolve();await Promise.resolve();
+  assert.equal(shell.dataset.scene,'gate');
+  const fallback=host.querySelector('.entry-fallback');
+  assert.equal(fallback.hidden,false);
+  assert.match(host.querySelector('.entry-status').textContent,/chưa phát được nhạc/);
+  host.querySelector('.entry-begin').dispatch('click');
+  await Promise.resolve();await Promise.resolve();
+  assert.equal(globalThis.__audioPlayCalls,2);
+  fallback.dispatch('click');
+  assert.equal(shell.dataset.scene,'intro');
+  host.querySelector('.skip-intro').dispatch('click');
+  assert.equal(shell.dataset.scene,'lookup');
+  destroy();
+  globalThis.__audioFail=false;
 });

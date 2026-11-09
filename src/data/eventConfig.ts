@@ -21,7 +21,7 @@ export const eventConfig: EventConfig = {
   schoolYearReference: '10A5 — 2024–2025',
   currentClassName: '', // Chưa xác nhận tên lớp hiện tại.
   sender: 'Một người bạn trong lớp',
-  enableAudio: false,
+  enableAudio: true,
   enableParticles: true,
   enableIntro: true,
   showCountdown: false

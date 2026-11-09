@@ -1,45 +1,132 @@
 import { el } from '../utils/dom.js';
 
-/** Tiếng ngân nguyên bản được tổng hợp bằng Web Audio; chỉ khởi phát sau khi chạm. */
-export function createAudioToggle(): HTMLButtonElement {
-  const button = el('button', 'audio-toggle', '♪  Bật âm thanh');
+export interface AudioController {
+  button: HTMLButtonElement;
+  /** Gọi trực tiếp từ sự kiện click/touch; KHÔNG await trước .play(). */
+  playFromGesture: () => Promise<boolean>;
+  stop: () => void;
+  destroy: () => void;
+}
+
+const VOLUME = 0.34;
+
+/** Một audio element dùng xuyên suốt intro, tìm sao và đọc thư. */
+export function createAudioToggle(): AudioController {
+  const button = el('button', 'audio-toggle', '♪  Bật nhạc');
   button.type = 'button';
   button.setAttribute('aria-pressed', 'false');
-  button.title = 'Âm thanh tùy chọn, mặc định tắt';
-  let ctx: AudioContext | null = null;
-  let timer = 0;
+  button.setAttribute('aria-label', 'Bật nhạc nền');
+  button.title = 'Chạm để bật hoặc tắt nhạc nền';
+
+  const audio = document.createElement('audio') as HTMLAudioElement;
+  audio.src = './audio/galaxy-letters-original-score.mp3';
+  audio.preload = 'auto';
+  audio.loop = true;
+  audio.volume = 0;
+  audio.setAttribute('aria-hidden', 'true');
+
   let enabled = false;
-  function play(): void {
-    if (!ctx || ctx.state !== 'running') return;
-    const now = ctx.currentTime;
-    const notes = [261.63, 329.63, 392.0];
-    const oscillators: OscillatorNode[] = [];
-    for (let i = 0; i < notes.length; i++) {
-      const oscillator = ctx.createOscillator();
-      const gain = ctx.createGain();
-      oscillator.type = 'sine'; oscillator.frequency.value = notes[i] / 2;
-      gain.gain.setValueAtTime(0, now);
-      gain.gain.linearRampToValueAtTime(.015, now + 1.2 + .2 * i);
-      gain.gain.exponentialRampToValueAtTime(.0001, now + 4.6);
-      oscillator.connect(gain).connect(ctx.destination);
-      oscillator.start(now); oscillator.stop(now + 4.8);
-      oscillators.push(oscillator);
+  let disposed = false;
+  let operation = 0;
+  let fadeTimer = 0;
+  let pauseTimer = 0;
+
+  function updateButton(): void {
+    button.textContent = enabled ? '♪  Tắt nhạc' : '♪  Bật nhạc';
+    button.setAttribute('aria-label', enabled ? 'Tắt nhạc nền' : 'Bật nhạc nền');
+    button.setAttribute('aria-pressed', String(enabled));
+    button.title = enabled ? 'Tắt nhạc nền' : 'Bật nhạc nền';
+  }
+
+  function fadeVolume(target: number): void {
+    window.clearInterval(fadeTimer);
+    const from = audio.volume;
+    let frame = 0;
+    const total = 24;
+    fadeTimer = window.setInterval(() => {
+      frame += 1;
+      const t = Math.min(frame / total, 1);
+      audio.volume = Math.max(0, Math.min(1, from + (target - from) * t));
+      if (frame >= total) window.clearInterval(fadeTimer);
+    }, 45);
+  }
+
+  function playFromGesture(): Promise<boolean> {
+    if (disposed) return Promise.resolve(false);
+    if (enabled && !audio.paused) return Promise.resolve(true);
+    const currentOperation = ++operation;
+    window.clearTimeout(pauseTimer);
+    window.clearInterval(fadeTimer);
+    audio.volume = 0.015;
+
+    // Phải gọi audio.play() trong chính callstack của thao tác chạm thực tế.
+    // Không được chờ một Promise (fetch, animation hay timer) trước lệnh này.
+    let playResult: Promise<void> | undefined;
+    try {
+      playResult = audio.play();
+    } catch {
+      if (currentOperation === operation) { enabled = false; updateButton(); }
+      return Promise.resolve(false);
     }
+    return Promise.resolve(playResult).then(() => {
+      if (disposed || currentOperation !== operation) {
+        audio.pause();
+        return false;
+      }
+      enabled = true;
+      updateButton();
+      fadeVolume(VOLUME);
+      return true;
+    }, () => {
+      if (currentOperation === operation) {
+        enabled = false;
+        updateButton();
+      }
+      return false;
+    });
   }
-  async function setEnabled(value: boolean): Promise<void> {
-    enabled = value;
-    button.setAttribute('aria-pressed', String(value));
-    button.textContent = value ? '♪  Tắt âm thanh' : '♪  Bật âm thanh';
-    window.clearInterval(timer);
-    if (value) {
-      const AudioContextClass = window.AudioContext;
-      if (!AudioContextClass) { enabled = false; button.textContent = 'Không hỗ trợ âm thanh'; button.disabled = true; return; }
-      ctx ??= new AudioContextClass();
-      try { await ctx.resume(); play(); timer = window.setInterval(play, 7000); }
-      catch { enabled = false; button.setAttribute('aria-pressed', 'false'); button.textContent = '♪  Bật âm thanh'; }
-    } else if (ctx) await ctx.suspend();
+
+  function stop(): void {
+    ++operation;
+    window.clearTimeout(pauseTimer);
+    window.clearInterval(fadeTimer);
+    enabled = false;
+    updateButton();
+    if (audio.paused) return;
+    fadeVolume(0);
+    pauseTimer = window.setTimeout(() => {
+      if (!enabled && !disposed) audio.pause();
+    }, 1150);
   }
-  button.addEventListener('click', () => { void setEnabled(!enabled); });
-  window.addEventListener('pagehide', () => { window.clearInterval(timer); void ctx?.close(); }, { once: true });
-  return button;
+
+  function onClick(): void {
+    if (enabled) stop();
+    else void playFromGesture();
+  }
+  function onPageHide(): void {
+    ++operation;
+    window.clearInterval(fadeTimer);
+    window.clearTimeout(pauseTimer);
+    enabled = false;
+    audio.pause();
+    updateButton();
+  }
+  button.addEventListener('click', onClick);
+  window.addEventListener('pagehide', onPageHide);
+
+  return {
+    button, playFromGesture, stop,
+    destroy: () => {
+      if (disposed) return;
+      disposed = true;
+      ++operation;
+      window.clearInterval(fadeTimer);
+      window.clearTimeout(pauseTimer);
+      audio.pause();
+      audio.removeAttribute('src');
+      audio.load();
+      button.removeEventListener('click', onClick);
+      window.removeEventListener('pagehide', onPageHide);
+    }
+  };
 }

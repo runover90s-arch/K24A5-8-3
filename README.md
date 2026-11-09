@@ -16,7 +16,7 @@ Build dựa trên **Node.js >=22.13** (`node:module.stripTypeScriptTypes`). Cú 
 
 ### Cách A — nhanh nhất khi chỉ có điện thoại (một file HTML)
 
-Thư mục **`standalone/`** chứa file `index.html` độc lập (~100 KB), có **đủ 24 thư, CSS, Canvas và logic** nằm trong một file; không cần cài npm và không cần tải các file khác.
+Thư mục **`standalone/`** chứa file `index.html` độc lập (~2,7 MB, bao gồm nhạc MP3 và ảnh thiên hà nhúng sẵn), có **đủ 24 thư, CSS, Canvas và logic** nằm trong một file; không cần cài npm và không cần tải các file khác.
 
 1. Tải ZIP của dự án và giải nén bằng ứng dụng **Tệp/Files** (iPhone) hoặc **Files của Google** (Android).
 2. Vào [github.com/new](https://github.com/new), đăng nhập, tạo repository công khai. Gợi ý đặt tên `galaxy-letters-8-3-2027`. Tích **Add a README file** khi tạo repo qua điện thoại để có nhánh `main`.
@@ -59,7 +59,7 @@ Workflow `.github/workflows/deploy.yml` tự `npm ci` → `npm test` (build và 
 ```bash
 npm ci
 npm run dev           # http://localhost:5173; sửa file sẽ tự build lại, refresh trình duyệt
-npm test              # chạy 33 bài kiểm tra tích hợp/dữ liệu/asset
+npm test              # chạy 34 bài kiểm tra tích hợp/dữ liệu/asset
 npm run build         # dist/ và standalone/index.html
 npm run preview       # http://localhost:4173
 npm run standalone    # chỉ tạo lại bản HTML một file
@@ -83,7 +83,7 @@ Chỉnh **`src/data/eventConfig.ts`**:
 | `currentClassName` | `''` | **Chưa xác nhận tên lớp hiện tại**, để trống |
 | `schoolYearReference` | `10A5 — 2024–2025` | Tham chiếu lịch sử, không nhận là lớp hiện tại |
 | `eventDate` | `2027-03-08` | Ngày kỷ niệm |
-| `enableAudio` | `false` | Chỉ hiện nút âm thanh khi chủ trang bật |
+| `enableAudio` | `true` | Bật màn chào khởi động nhạc bằng một lần chạm; có nút tắt/bật nhạc về sau |
 | `enableParticles` | `true` | Bật/tắt Canvas stars (nền gradient vẫn tồn tại) |
 | `enableIntro` | `true` | Bật/tắt cảnh mở đầu |
 | `showCountdown` | `false` | Hiện đếm ngược; **không khóa website** |
@@ -119,9 +119,9 @@ Tên dùng khóa **STT duy nhất**. Chỉnh `displayName` để dùng cách g�
 
 - `npm ci --offline --ignore-scripts`: thành công trên môi trường tạo dự án.
 - `npm run build`: thành công trên Node v22.16.0.
-- `npm test`: **33/33 bài test đạt** tại lần kiểm tra cuối. Chúng kiểm tra toàn bộ 24 họ tên+STT, sự phân biệt các tên gần giống, validation, đặc biệt STT 34, nội dung thư 120–180 từ, seed hình ảnh ổn định, asset path và mô phỏng trạng thái DOM.
+- `npm test`: **34/34 bài test đạt** tại lần kiểm tra cuối. Chúng kiểm tra toàn bộ 24 họ tên+STT, sự phân biệt các tên gần giống, validation, đặc biệt STT 34, nội dung thư 120–180 từ, seed hình ảnh ổn định, asset path và mô phỏng trạng thái DOM.
 - `tsc -p tsconfig.json --pretty false`: thành công tại lần kiểm tra với TypeScript 5.8.3 có sẵn trong môi trường.
-- **Chưa có bằng chứng kiểm thử hình ảnh tự động bằng Chrome/iOS Safari thực tế** trong môi trường tạo này: trình duyệt Chromium hệ thống áp chính sách `URLBlocklist: ["*"]` nên chặn cả localhost/file. Không thể kết luận đã nghiệm thu hiệu năng/FPS và hình ảnh trên thiết bị thật. Tham khảo `docs/ACCEPTANCE.md` và chạy smoke test Playwright tại môi trường cho phép mở trang.
+- **Đã kiểm thử giao diện qua Chromium headless** bằng cách tải trực tiếp nội dung HTML độc lập vào trình duyệt (do URLBlocklist chặn localhost/file). Tại các viewport **320×568, 390×844, 844×390, 1280×800**: màn chào hiện đúng, nút chạm mở nhạc, chuyển intro → nhập STT → thư Ánh Minh thành công, không có lỗi JS hoặc tràn ngang trong các lượt kiểm thử đó. Điều này **không thay thế** kiểm thử Safari/Chrome trên điện thoại thật, hosting GitHub Pages, FPS và chất lượng âm lượng thiết bị. Tham khảo `docs/ACCEPTANCE.md` và chạy smoke test Playwright tại môi trường cho phép mở trang.
 
 Dự án có mã kiểm thử trình duyệt tùy chọn `tests/browser_smoke.py`. Cài Playwright/Chromium trên máy thông thường, mở `npm run preview`, rồi chạy script này. Nó kiểm tra các mốc 320–1280 px, cảnh chuyển động, STT đặc biệt và bản độc lập. Điều chỉnh `CHROMIUM_PATH` nếu dùng browser system khác.
 
@@ -138,3 +138,54 @@ Dự án có mã kiểm thử trình duyệt tùy chọn `tests/browser_smoke.py
 ---
 
 **Định hướng thẩm mỹ:** dreamy cosmic · elegant · cinematic · không dùng nền video nặng · không dùng nhạc bản quyền. Khi lá thư xuất hiện, bầu trời dịu đi để câu chữ được ưu tiên.
+
+
+## Cinematic intro assets
+
+- The opening sequence begins with a pure-black pause, then reveals a series of Vietnamese story lines before the spiral-galaxy image appears.
+- The intro opens with 5 seconds of pure black, then presents 9 Vietnamese story beats (about 5.7 seconds each). The galaxy begins to emerge near 40 seconds; the final title and CTA arrive at about 56.5 seconds. A skip control appears with the first line.
+- `public/images/spiral-galaxy.webp` is the locally bundled galaxy image supplied for this project.
+- `public/audio/galaxy-letters-original-score.mp3` is a 96-second original instrumental ambient score created for this project (soft piano, evolving synth pads, strings and celestial bells).
+- Website shows an **entry screen** with a **Bước vào vũ trụ** button; the same user tap starts `audio.play()` immediately. Only after successful playback does the black-screen 5-second intro begin. This respects browser sound autoplay restrictions; there is no way to force audible sound before a user gesture.
+- If audio is blocked/unavailable, visitors see **Thử bật nhạc lần nữa** and **Tiếp tục không có nhạc**, avoiding a dead end. The audio toggle remains available after starting.
+- If `prefers-reduced-motion` is enabled, the intro title is shown immediately after the entry tap. The entry tap is still required for sound.
+- Soundtrack stays local in `public/audio/` and is not fetched from third-party services.
+- The one-file build embeds the image and soundtrack as data URIs, so `standalone/index.html` remains self-contained.
+
+
+## Màn chào kích hoạt âm nhạc (bản nâng cấp)
+
+**Luồng:** mở website → màn chào tối “Trước khi vũ trụ thức giấc...” → chạm **Bước vào vũ trụ** → âm nhạc phát → màn đen trong 5 giây → 9 câu chuyện (5,7 giây/câu) → hiện ảnh thiên hà từ giây 40,5 → tiêu đề và nút nhập STT sau khoảng 56,5 giây. Có nút bỏ qua intro khi câu đầu xuất hiện.
+
+Không dùng `autoplay` với tiếng để vượt chính sách trình duyệt: `audio.play()` được gọi **ngay trong `click` callback** của nút chào và một audio element được duy trì xuyên suốt website. Khi người dùng tắt nhạc, có thể bật lại bằng nút góc trên. Trình duyệt có thể chặn hoặc thiết bị có thể đang tắt âm lượng, vì thế luôn có cách thử lại và đi tiếp khi lỗi.
+
+### Cập nhật repository K24A5-8-3 bằng Termux (khi cần)
+
+1. Tải gói ZIP mới vào thư mục `Download`.
+2. Sau khi đã chạy `termux-setup-storage`, Termux có `git`, `gh`, `unzip` và đã xác thực `gh auth login`, thực hiện:
+
+```bash
+set -e
+ZIP="$HOME/storage/downloads/Galaxy_Letters_8-3-2027_Start_With_Music.zip"
+WORK="$(mktemp -d)"
+REPO="$HOME/K24A5-8-3"
+test -f "$ZIP" || { echo 'Chua tim thay file ZIP trong Download'; exit 1; }
+unzip -oq "$ZIP" -d "$WORK"
+if [ ! -d "$REPO/.git" ]; then
+  gh repo clone runover90s-arch/K24A5-8-3 "$REPO"
+fi
+cd "$REPO"
+git pull --ff-only origin main
+cp -a "$WORK/galaxy-letters-8-3-2027/." "$REPO/"
+cd "$REPO"
+gh auth setup-git
+git add -A
+if ! git diff --cached --quiet; then
+  git -c user.name="$(gh api user --jq .login)" -c user.email="$(gh api user --jq .id)+$(gh api user --jq .login)@users.noreply.github.com" commit -m 'Start cinematic intro with soundtrack on tap'
+fi
+git push origin main
+```
+
+3. **Settings → Pages → Source: GitHub Actions**, kiểm tra Actions có dấu tích xanh rồi mở `https://runover90s-arch.github.io/K24A5-8-3/`.
+
+Không upload trực tiếp file ZIP lên root repository: cần giải nén và chép **nội dung** các thư mục.

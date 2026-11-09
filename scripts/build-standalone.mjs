@@ -5,7 +5,7 @@ const root=resolve('.');
 const order=[
   'utils/dom','data/eventConfig','data/recipients','data/letters','utils/validateStt',
   'utils/visualSeed','hooks/useReducedMotion','components/Envelope',
-  'components/GalaxyBackground','components/IntroScene','components/StudentLookup',
+  'components/GalaxyBackground','components/IntroScene','components/SoundEntryScene','components/StudentLookup',
   'components/StarField','components/MorphTransition','components/LetterView',
   'components/ClosingScene','components/AudioToggle','App','main'
 ];
@@ -24,6 +24,11 @@ for(const name of styles){
   css+=`\n/* ${name}.css */\n${part}\n`;
 }
 let html=await readFile(join(root,'index.html'),'utf8');
+const galaxyData=await readFile(join(root,'public/images/spiral-galaxy.webp'),'base64');
+const musicData=await readFile(join(root,'public/audio/galaxy-letters-original-score.mp3'),'base64');
+code=code.replaceAll("'./images/spiral-galaxy.webp'",`'data:image/webp;base64,${galaxyData}'`);
+code=code.replaceAll("'./audio/galaxy-letters-original-score.mp3'",`'data:audio/mpeg;base64,${musicData}'`);
+
 html=html.replace(/\s*<link rel="stylesheet"[^>]+>/,'');
 html=html.replace(/\s*<script type="module" defer src="\.\/src\/main\.js"><\/script>/,'');
 html=html.replace(/\s*<meta property="og:image"[^>]+>/,'').replace(/\s*<meta name="twitter:image"[^>]+>/,'');
