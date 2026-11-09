@@ -1,0 +1,1478 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover" />
+  <meta name="theme-color" content="#060817" />
+  <meta name="description" content="GALAXY LETTERS — Một vũ trụ nhỏ, dành riêng cho bạn. Món quà ngày 08.03.2027, nơi mỗi vì sao giữ một lá thư ấm áp." />
+  <meta name="robots" content="index,follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="vi_VN" />
+  <meta property="og:site_name" content="GALAXY LETTERS" />
+  <meta property="og:title" content="GALAXY LETTERS — 08.03.2027" />
+  <meta property="og:description" content="Một vũ trụ nhỏ, dành riêng cho bạn. Có một lá thư đang chờ được mở." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="GALAXY LETTERS — 08.03.2027" />
+  <meta name="twitter:description" content="Một vũ trụ nhỏ, dành riêng cho bạn." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%0A%20%20%3Cdefs%3E%3CradialGradient%20id%3D%22space%22%3E%3Cstop%20stop-color%3D%22%2323214e%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23060817%22%2F%3E%3C%2FradialGradient%3E%3ClinearGradient%20id%3D%22star%22%20x1%3D%220%22%20x2%3D%221%22%20y1%3D%220%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%23fff0c1%22%2F%3E%3Cstop%20offset%3D%22.55%22%20stop-color%3D%22%23d4bcff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2390d9ff%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%0A%20%20%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2216%22%20fill%3D%22url(%23space)%22%2F%3E%0A%20%20%3Ccircle%20cx%3D%2232%22%20cy%3D%2232%22%20r%3D%2222%22%20stroke%3D%22%23d4bcff%22%20stroke-opacity%3D%22.29%22%20fill%3D%22none%22%2F%3E%0A%20%20%3Cpath%20d%3D%22M32%209L37.6%2025.6L55%2032L37.6%2038.4L32%2055L26.4%2038.4L9%2032L26.4%2025.6Z%22%20fill%3D%22url(%23star)%22%2F%3E%0A%3C%2Fsvg%3E%0A" />
+  <title>GALAXY LETTERS — Một vũ trụ, ngàn lời thương | 08.03.2027</title>
+  <style>
+
+/* variables.css */
+:root {
+  color-scheme: dark;
+  --midnight: #060817;
+  --indigo: #111739;
+  --lavender: #d4bcff;
+  --rose: #ffc5e3;
+  --gold: #fff0c1;
+  --aurora: #90d9ff;
+  --pearl: #faf6ff;
+  --accent: #d4bcff;
+  --secondary: #90d9ff;
+  --ink: #342c4c;
+  --ink-muted: #686078;
+  --ease: cubic-bezier(.22,1,.36,1);
+  --font-sans: 'Avenir Next','Segoe UI',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+  --font-serif: 'Iowan Old Style','Baskerville','Palatino Linotype','Book Antiqua',Georgia,serif;
+}
+
+
+/* animations.css */
+@keyframes nebula-drift-a{from{transform:translate3d(-2%,-4%,0) rotate(-5deg)}to{transform:translate3d(9%,8%,0) rotate(11deg)}}
+@keyframes nebula-drift-b{from{transform:translate3d(5%,-5%,0) rotate(-4deg)}to{transform:translate3d(-9%,9%,0) rotate(8deg)}}
+@keyframes nebula-drift-c{from{transform:translate3d(-2%,0,0)}to{transform:translate3d(9%,-9%,0)}}
+@keyframes breathe{0%,100%{transform:scale(.92);opacity:.7}50%{transform:scale(1.15);opacity:1}}
+@keyframes orbit{to{transform:rotate(calc(360deg + var(--orbit-angle,0deg)))}}
+@keyframes stellar-flicker{0%,100%{opacity:.85;transform:scale(.95)}50%{opacity:1;transform:scale(1.12)}}
+@keyframes rise-in{from{opacity:0;transform:translateY(20px);filter:blur(5px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+@keyframes trail-pass{0%{opacity:0;transform:translate(150px,-85px) rotate(-35deg) scaleX(.4)}20%{opacity:1}85%{opacity:1}100%{opacity:0;transform:translate(-330px,180px) rotate(-35deg) scaleX(1.2)}}
+@keyframes constellation-draw{from{stroke-dashoffset:420}to{stroke-dashoffset:0}}
+@keyframes point-appear{0%{opacity:0;transform:scale(.1)}100%{opacity:1;transform:scale(1)}}
+@keyframes gleam{0%,100%{opacity:.30}50%{opacity:.65}}
+@keyframes wish-pulse{0%,100%{transform:scale(1);box-shadow:0 0 18px #ddbdff66}50%{transform:scale(1.08);box-shadow:0 0 33px #efceff99}}
+@keyframes seal-glow{0%,100%{box-shadow:0 0 0 6px #d5b9ff17,0 0 23px #e3caff88}50%{box-shadow:0 0 0 10px #d5b9ff10,0 0 31px #e3caffaa}}
+
+/* Phần tử vật lý duy nhất được morph giữa 6 trạng thái. */
+.morph-object{position:fixed;left:50%;top:27dvh;width:118px;height:118px;transform:translate(-50%,-50%);z-index:5;pointer-events:none;transition:top 1080ms cubic-bezier(.26,.72,.19,1),width 1050ms cubic-bezier(.26,.72,.19,1),height 1050ms cubic-bezier(.26,.72,.19,1),border-radius 1050ms ease,filter 700ms ease;will-change:top,width,height;--orbit-angle:0deg}
+.morph-halo{position:absolute;inset:-47%;border-radius:50%;background:radial-gradient(circle,rgba(210,182,255,.26) 0%,rgba(106,80,214,.13) 32%,transparent 69%);filter:blur(10px);animation:breathe 6s ease-in-out infinite;transition:opacity .5s,transform 1s}
+.morph-core{position:absolute;inset:26%;border-radius:22%;clip-path:polygon(50% 0,61% 36%,100% 50%,61% 62%,50% 100%,39% 62%,0 50%,39% 36%);background:radial-gradient(circle at 42% 37%,#ffffff 1%,var(--gold) 20%,var(--accent) 57%,#a7a0ff 100%);box-shadow:0 0 25px var(--accent);filter:drop-shadow(0 0 15px var(--accent)) drop-shadow(0 0 22px rgba(212,188,255,.4));animation:stellar-flicker 4.5s ease-in-out infinite;transition:opacity 500ms,clip-path 700ms,transform 850ms var(--ease)}
+.morph-ray{position:absolute;inset:-16%;border-radius:50%;background:conic-gradient(from 45deg,transparent 0deg,rgba(255,246,216,.1) 50deg,transparent 92deg,transparent 175deg,rgba(255,246,216,.09) 205deg,transparent 255deg);filter:blur(6px);animation:orbit 22s linear infinite;opacity:.65;transition:opacity 500ms}
+.morph-orbit{position:absolute;inset:-33%;border-radius:50%;border:1px solid rgba(226,212,255,.18);transform:rotate(var(--orbit-angle));animation:orbit 34s linear infinite;transition:opacity 500ms}
+.morph-orbit::after{content:'';width:5px;height:5px;position:absolute;top:16%;right:14%;border-radius:50%;background:var(--gold);box-shadow:0 0 15px var(--gold)}
+.morph-orbit-b{inset:-64%;border-color:rgba(158,194,255,.10);animation-duration:46s;animation-direction:reverse;transform:rotate(31deg)}
+.morph-orbit-b::after{width:3px;height:3px;top:64%;right:3%;background:var(--secondary)}
+.morph-object[data-stage='lookup']{top:18dvh;width:90px;height:90px}
+.morph-object[data-stage='recognize']{top:40dvh;width:205px;height:205px}
+.morph-object[data-stage='recognize'] .morph-core{transform:scale(1.2);filter:drop-shadow(0 0 22px var(--accent)) drop-shadow(0 0 40px var(--secondary))}
+.app-shell.star-recognized .morph-halo{transform:scale(1.6);opacity:1}
+.morph-object[data-stage='envelope']{top:43dvh;width:min(340px,84vw);height:220px}
+.morph-object[data-stage='envelope'] .morph-halo{opacity:.56;transform:scale(1.4)}
+.morph-object[data-stage='envelope'] .morph-core,.morph-object[data-stage='envelope'] .morph-ray,.morph-object[data-stage='envelope'] .morph-orbit{opacity:0;transform:scale(.45)}
+.morph-object[data-stage='letter']{top:50dvh;width:min(740px,calc(100vw - 28px));height:min(790px,calc(100dvh - 158px));border-radius:24px}
+.morph-object[data-stage='letter'] .morph-halo,.morph-object[data-stage='letter'] .morph-core,.morph-object[data-stage='letter'] .morph-ray,.morph-object[data-stage='letter'] .morph-orbit{opacity:0;animation:none}
+.morph-object[data-stage='closing']{top:25dvh;width:142px;height:142px}
+.morph-object[data-stage='closing'] .morph-core{transform:scale(1.15);animation:stellar-flicker 3.2s ease-in-out infinite}
+.morph-object[data-stage='closing'] .morph-orbit{border-color:rgba(240,220,255,.28)}
+
+/* Phong thư nhiều lớp: giấy trượt lên trước khi morph thành khung đọc. */
+.envelope-shell{position:absolute;inset:0;opacity:0;transform:scale(.62);transition:opacity 550ms,transform 750ms var(--ease);filter:drop-shadow(0 24px 28px rgba(6,5,29,.43));perspective:900px;visibility:hidden}
+.morph-object[data-stage='envelope'] .envelope-shell{opacity:1;transform:scale(1);visibility:visible}
+.morph-object[data-stage='letter'] .envelope-shell{opacity:0;transform:scale(1.34);visibility:hidden;transition:opacity 700ms ease,transform 950ms var(--ease),visibility 700ms}
+.envelope-back{position:absolute;left:0;right:0;bottom:0;height:70%;border-radius:0 0 15px 15px;background:linear-gradient(130deg,#cab6f2,#f8d4e9 55%,#a8bae9);border:1px solid #f4e6ff88;box-shadow:inset 0 2px 15px rgba(255,255,255,.25)}
+.envelope-insert{position:absolute;left:9%;width:82%;height:77%;bottom:5%;z-index:2;background:linear-gradient(160deg,#fffdfd,#faf4ff);border-radius:5px 5px 3px 3px;box-shadow:0 3px 22px rgba(48,32,85,.15);transform:translateY(25px);transition:transform 850ms cubic-bezier(.2,.9,.32,1);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:16px 8px;gap:9px;color:#5d4c86;text-align:center}
+.envelope-insert-star{font-size:22px;color:#b39ad8}
+.envelope-insert-name{font-family:var(--font-serif);font-size:15px;font-style:italic}
+.envelope-insert-date{font-size:9px;letter-spacing:.18em}
+.envelope-front{position:absolute;left:0;right:0;bottom:0;height:70%;z-index:3;border-radius:0 0 15px 15px;clip-path:polygon(0% 0%,50% 52%,100% 0%,100% 100%,0% 100%);background:linear-gradient(155deg,#e6d3ff 0%,#c4b3e9 45%,#dbc6f4 72%,#facde3 100%);box-shadow:inset 0 -15px 40px #b9a3d83d}
+.envelope-flap{position:absolute;left:0;right:0;top:30%;height:53%;z-index:4;clip-path:polygon(0 0,100% 0,50% 100%);background:linear-gradient(165deg,#f9e0f2,#e4cffb 50%,#c6b3ee);transform-origin:50% 0%;transform:rotateX(0deg);backface-visibility:visible;transition:transform 850ms cubic-bezier(.21,.76,.23,1)}
+.envelope-seal{position:absolute;left:50%;top:66%;width:43px;height:43px;display:grid;place-items:center;z-index:5;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at 30% 25%,#efddff,#b992dc);box-shadow:0 0 0 6px #d5b9ff17,0 0 23px #e3caff88;color:#fff9ff;font-size:23px;transition:opacity 300ms;animation:seal-glow 4s infinite}
+.envelope-shell.opened .envelope-flap{transform:rotateX(178deg);z-index:1}
+.envelope-shell.opened .envelope-insert{transform:translateY(-52px)}
+.envelope-shell.opened .envelope-seal{opacity:0}
+
+/* Tờ giấy thật trở thành bề mặt đọc, cuộn độc lập an toàn cho cảm ứng. */
+.letter-sheet{position:absolute;inset:0;border:1px solid rgba(255,255,255,.92);border-radius:24px;background:linear-gradient(151deg,#fffefa 0%,#fbf7ff 52%,#f5f1fc 100%);color:var(--ink);box-shadow:0 22px 90px rgba(4,4,22,.47),0 0 0 7px rgba(228,201,255,.075),inset 0 1px 0 rgba(255,255,255,.95);opacity:0;transform:translateY(38px) scale(.88);clip-path:inset(30% 16% 18% 16% round 16px);transition:transform 960ms var(--ease),clip-path 1000ms var(--ease),opacity 560ms,visibility 560ms;pointer-events:none;visibility:hidden;overflow:hidden}
+.letter-sheet::before{content:'';pointer-events:none;position:absolute;inset:10px;border-radius:17px;border:1px solid rgba(157,133,195,.12);z-index:1}
+.letter-sheet::after{content:'✧';position:absolute;right:27px;top:18px;font-size:28px;color:#ab91c7;opacity:.3;pointer-events:none}
+.morph-object[data-stage='letter'] .letter-sheet{opacity:1;transform:translateY(0) scale(1);clip-path:inset(0% 0% 0% 0% round 24px);visibility:visible;pointer-events:auto}
+.letter-scroll{position:relative;z-index:2;height:100%;width:100%;overflow-x:hidden;overflow-y:auto;touch-action:pan-y;-webkit-overflow-scrolling:touch;overscroll-behavior-y:contain;padding:clamp(24px,5vw,60px) clamp(21px,6vw,68px) clamp(35px,5vw,54px);scrollbar-color:#ccb6e0 transparent;scrollbar-width:thin}
+.letter-scroll::-webkit-scrollbar{width:6px}
+.letter-scroll::-webkit-scrollbar-thumb{background:#ccb6e0;border-radius:6px}
+.letter-scroll::before{content:'';position:absolute;left:50%;top:15px;width:62%;height:1px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,#e7d7f4,transparent);pointer-events:none}
+.letter-scroll .paper-ornament{text-align:center;color:#a88cc8;letter-spacing:.8em;font-size:12px;margin:4px auto 19px;opacity:.8}
+.letter-date{text-align:center;color:#8f78a5;letter-spacing:.24em;font-size:9px;font-weight:700;margin-bottom:19px}
+.letter-title{font-family:var(--font-serif);font-weight:500;letter-spacing:-.035em;line-height:1.2;text-align:center;font-size:clamp(31px,5.6vw,51px);margin:0;color:#4a355e}
+.letter-to{text-align:center;font-size:12px;color:#867895;line-height:1.5;margin:11px 0 24px}
+.paper-divider{width:125px;height:1px;margin:0 auto 29px;background:linear-gradient(90deg,transparent,#ac90c7,transparent)}
+.letter-body{font-family:var(--font-serif);font-size:clamp(15px,2vw,18px);font-weight:400;line-height:1.92;letter-spacing:.008em;color:#423850}
+.letter-body p{margin:0 0 20px;text-align:left}
+.letter-ending{font-family:var(--font-serif);color:#684986;font-size:clamp(17px,2vw,19px);font-weight:700;line-height:1.6;margin:26px 0 23px}
+.letter-signature{font-family:var(--font-serif);font-size:17px;font-style:italic;margin:0;color:#67537b}
+.signature-detail{font-family:var(--font-serif);font-size:15px;font-style:italic;color:#87749a;margin:4px 0 35px}
+.letter-actions{border-top:1px solid #e8dff1;padding-top:24px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.soft-btn{min-height:46px;padding:10px 9px;border:1px solid #ddd0e9;border-radius:12px;background:rgba(255,255,255,.63);color:#66547f;font-size:12px;font-weight:600;line-height:1.3}
+.soft-btn:hover{background:#f0e8fa;box-shadow:0 5px 18px #b19acc22;transform:translateY(-2px)}
+.wish-area{text-align:center;margin:38px auto 0;border-top:1px solid #e9e0f0;padding:29px 0 1px}
+.wish-instruction{font-family:var(--font-serif);font-style:italic;color:#8b7c9f;font-size:15px;line-height:1.6;margin:0 0 16px}
+.wish-star{width:60px;height:60px;min-width:60px;min-height:60px;border-radius:50%;border:1px solid #d5b3e5;background:radial-gradient(circle at 33% 29%,#fff9ff,#e4d2fa 65%,#b89cdd);font-size:26px;color:#78559e;animation:wish-pulse 4s ease-in-out infinite}
+.wish-star:hover{filter:brightness(1.04)}
+.wish-label{display:block;margin-top:10px;font-size:10px;letter-spacing:.12em;color:#91819c}
+
+.constellation-layer{position:fixed;inset:0;z-index:3;pointer-events:none;overflow:hidden;opacity:0;transition:opacity 500ms ease}
+.constellation-layer.is-visible{opacity:.85}
+.constellation-svg{position:absolute;left:50%;top:40dvh;width:min(90vw,650px);height:min(70vh,580px);transform:translate(-50%,-50%);overflow:visible;filter:drop-shadow(0 0 5px var(--accent))}
+.constellation-line{stroke-dasharray:420;stroke-dashoffset:420;animation:constellation-draw 1650ms ease-out 50ms forwards}
+.constellation-dot{transform-box:fill-box;transform-origin:center;opacity:0;animation:point-appear 550ms ease-out 650ms forwards}
+.comet-particle{position:absolute;left:0;top:0;z-index:9;width:9px;height:9px;border-radius:50%;background:#fff8ec;box-shadow:0 0 16px 6px var(--accent),0 0 40px 9px var(--secondary);pointer-events:none}
+
+
+/* global.css */
+
+*,*::before,*::after{box-sizing:border-box}
+html{min-height:100%;background:var(--midnight);scroll-behavior:smooth}
+body{margin:0;min-width:280px;min-height:100dvh;overflow-x:hidden;font-family:var(--font-sans);color:var(--pearl);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+button,input{font:inherit}
+button{cursor:pointer;-webkit-tap-highlight-color:transparent}
+button:disabled{cursor:not-allowed}
+button:focus-visible,input:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+button:active{transform:translateY(1px)}
+::selection{background:#b8a0dd;color:#090b1f}
+[hidden]{display:none!important}
+#app,.app-shell{width:100%;min-height:100dvh}
+.app-shell{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse 82% 55% at 50% 52%,rgba(31,25,76,.34),transparent 76%),linear-gradient(155deg,#060818 0%,#090c24 36%,#10122c 67%,#08091c 100%)}
+.app-shell::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:1;background:radial-gradient(circle at center,transparent 23%,rgba(2,3,14,.30) 100%)}
+.galaxy-backdrop{position:fixed;inset:0;overflow:hidden;z-index:0;pointer-events:none;transition:opacity 950ms ease}
+.star-canvas{display:block;position:absolute;inset:0;pointer-events:none}
+.nebula{position:absolute;border-radius:50%;pointer-events:none;filter:blur(48px);opacity:.8;will-change:transform}
+.nebula-purple{width:105vw;height:80vh;min-width:460px;left:-36vw;top:2%;background:radial-gradient(ellipse,rgba(80,47,162,.28),rgba(35,41,100,.10) 50%,transparent 75%);animation:nebula-drift-a 28s ease-in-out infinite alternate}
+.nebula-blue{width:90vw;height:95vh;right:-35vw;top:10%;background:radial-gradient(ellipse,rgba(21,98,149,.24),rgba(38,32,107,.08) 54%,transparent 74%);animation:nebula-drift-b 32s ease-in-out infinite alternate}
+.nebula-rose{width:75vw;height:48vh;left:10vw;bottom:-25vh;background:radial-gradient(ellipse,rgba(154,76,138,.20),transparent 75%);animation:nebula-drift-c 37s ease-in-out infinite alternate}
+.app-shell[data-scene='letter'] .galaxy-backdrop{opacity:.68}
+.story-foreground{position:relative;z-index:7;min-height:100dvh;pointer-events:none}
+.site-header{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:calc(21px + env(safe-area-inset-top)) max(24px,env(safe-area-inset-right)) 18px max(24px,env(safe-area-inset-left));z-index:10;pointer-events:auto}
+.site-brand{display:flex;align-items:center;gap:10px;font-size:11px;line-height:1;letter-spacing:.22em;font-weight:700;white-space:nowrap;color:#f6eeff}
+.brand-mark{font-size:23px;color:var(--gold);filter:drop-shadow(0 0 8px rgba(255,237,177,.6));font-weight:400}
+.header-meta{font-size:10px;letter-spacing:.16em;white-space:nowrap;color:#bfb9d7;text-align:right}
+.audio-toggle{background:rgba(255,255,255,.075);color:#e7dcff;border:1px solid rgba(225,206,255,.23);padding:11px 13px;border-radius:100px;font-size:12px;min-height:44px}
+.site-footer{position:fixed;bottom:0;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:12px;padding:12px max(16px,env(safe-area-inset-right)) calc(14px + env(safe-area-inset-bottom));font-size:10px;letter-spacing:.06em;color:rgba(217,211,239,.57);z-index:8;pointer-events:none;text-align:center}
+.footer-sigil{font-size:15px;color:var(--lavender);opacity:.75}
+.countdown{font-size:11px;color:var(--gold)}
+.story-root{position:relative;min-height:100dvh;pointer-events:none}
+.scene{position:fixed;inset:0;z-index:8;overflow-x:hidden;overflow-y:auto;scrollbar-width:thin;scrollbar-color:rgba(226,194,255,.25) transparent;display:flex;align-items:flex-start;justify-content:center;text-align:center;padding:calc(75px + env(safe-area-inset-top)) max(22px,env(safe-area-inset-left)) calc(62px + env(safe-area-inset-bottom)) max(22px,env(safe-area-inset-right));opacity:0;visibility:hidden;transform:translateY(7px);transition:opacity 700ms ease,visibility 700ms,transform 700ms var(--ease);pointer-events:none;overscroll-behavior-y:contain}
+.scene--active{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto}
+.scene-inner{width:100%;max-width:800px;margin-left:auto;margin-right:auto;position:relative;flex-shrink:0}
+.eyebrow{margin:0 0 20px;font-size:10px;font-weight:650;letter-spacing:.28em;color:var(--gold);text-transform:uppercase}
+.headline-italics{font-style:italic;font-weight:400;color:var(--lavender);text-shadow:0 0 34px rgba(199,178,255,.24)}
+.primary-btn,.outline-btn,.soft-btn,.text-btn{border:0;transition:box-shadow .3s,background .3s,color .3s,transform .2s;border-radius:100px;min-height:48px}
+.primary-btn{display:inline-flex;align-items:center;justify-content:center;gap:18px;background:linear-gradient(110deg,#f9ebff,#d9c6ff 55%,#bad8f6);color:#27223f;padding:15px 26px;font-size:13px;font-weight:750;letter-spacing:.015em;box-shadow:0 12px 38px rgba(126,104,206,.16),inset 0 1px 0 rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.85)}
+.primary-btn:hover{box-shadow:0 15px 45px rgba(191,160,255,.28),0 0 28px rgba(183,155,255,.16);transform:translateY(-2px)}
+.primary-btn:active{transform:translateY(1px)}
+.btn-sparkle{font-size:17px;color:#69568d;font-weight:400}
+.text-btn{background:transparent;border:0;color:#ccc4e4;padding:10px;font-size:12px;text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(232,216,255,.3)}
+.text-btn:hover{color:#fff}
+.outline-btn{background:rgba(255,255,255,.045);border:1px solid rgba(237,226,255,.33);padding:14px 24px;color:var(--pearl);font-weight:600;font-size:13px}
+.outline-btn:hover{background:rgba(255,255,255,.12)}
+.toast-message{position:fixed;left:50%;bottom:calc(83px + env(safe-area-inset-bottom));transform:translate(-50%,14px);background:#f8f3ff;color:#29233e;font-size:13px;line-height:1.5;padding:12px 19px;max-width:calc(100vw - 30px);border-radius:12px;box-shadow:0 10px 45px #020315a6;opacity:0;pointer-events:none;transition:opacity 260ms ease,transform 260ms ease;text-align:center;z-index:20}
+.toast--visible{opacity:1;transform:translate(-50%,0)}
+.skip-motion{position:fixed;right:calc(20px + env(safe-area-inset-right));bottom:calc(73px + env(safe-area-inset-bottom));z-index:12;min-height:44px;border:1px solid rgba(244,225,255,.4);border-radius:22px;padding:10px 17px;background:rgba(15,15,43,.88);color:#f5eaff;font-size:12px;pointer-events:auto;box-shadow:0 8px 30px rgba(0,0,0,.2)}
+.skip-motion:hover{background:#262041}
+
+
+/* scenes.css */
+/* CẢNH 01 — điểm sáng thức dậy */
+.scene--intro .intro-inner{max-width:860px;margin-top:clamp(205px,35dvh,355px);margin-bottom:10px}
+.scene--intro .eyebrow{animation:rise-in 900ms ease both;animation-delay:230ms}
+.intro-title{font-family:var(--font-serif);font-size:clamp(38px,6.5vw,73px);font-weight:500;line-height:1.13;letter-spacing:-.045em;margin:0 auto 17px;text-wrap:balance;color:#fffaf9;text-shadow:0 0 35px #d0b9ff17;animation:rise-in 1200ms var(--ease) both;animation-delay:420ms}
+.intro-title .headline-italics{font-size:.94em}
+.intro-lead{font-size:clamp(14px,1.5vw,16px);max-width:525px;margin:0 auto 25px;line-height:1.83;font-weight:400;color:#c4bfda;animation:rise-in 1100ms ease both;animation-delay:630ms}
+.date-divider{display:flex;align-items:center;justify-content:center;gap:13px;margin:0 auto 29px;animation:rise-in 1200ms ease both;animation-delay:780ms}
+.divider-line{width:44px;height:1px;background:linear-gradient(90deg,transparent,#d3bbf08c)}
+.divider-line:last-child{transform:rotate(180deg)}
+.date-text{font-size:11px;letter-spacing:.33em;font-weight:650;color:var(--gold)}
+.start-btn{animation:rise-in 1100ms var(--ease) both;animation-delay:950ms}
+.skip-intro{display:block;margin:15px auto 0;opacity:.79;animation:rise-in 1000ms ease both;animation-delay:1100ms}
+
+/* CẢNH 02 — ô nhập STT trong khung kính mờ */
+.scene--lookup .lookup-inner{max-width:670px;margin-top:clamp(155px,23dvh,250px);margin-bottom:12px}
+.scene-title{font-family:var(--font-serif);font-weight:500;font-size:clamp(31px,4.65vw,53px);line-height:1.17;letter-spacing:-.038em;text-wrap:balance;margin:0 auto 18px;color:#fffafa}
+.scene-lead{font-size:14px;color:#c6bfdc;max-width:480px;line-height:1.8;margin:0 auto 30px}
+.lookup-form{width:min(430px,100%);margin:0 auto;padding:26px 25px 24px;display:flex;flex-direction:column;text-align:left;border:1px solid rgba(226,209,255,.22);border-radius:24px;background:linear-gradient(150deg,rgba(116,106,172,.15),rgba(37,38,86,.31) 70%,rgba(109,68,129,.13));box-shadow:0 18px 80px rgba(3,4,19,.26),inset 0 1px 0 rgba(255,255,255,.1);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.input-label{font-size:10px;font-weight:750;letter-spacing:.20em;color:#eee5fa;margin:0 0 13px}
+.input-row{display:flex;align-items:center;height:62px;border:1px solid rgba(216,200,251,.30);border-radius:14px;background:rgba(5,6,22,.48);overflow:hidden;transition:border-color 280ms,box-shadow 280ms}
+.input-row:focus-within{border-color:#e4c8ff;box-shadow:0 0 0 3px rgba(207,172,251,.15),0 0 22px rgba(167,135,232,.20)}
+.input-row:has(input[aria-invalid='true']){border-color:#ffb8d1}
+.input-prefix{display:grid;place-items:center;color:var(--lavender);padding-left:17px;padding-right:8px;font-size:20px}
+.stt-input{width:100%;height:100%;min-width:0;background:transparent;border:0;outline:none!important;color:var(--pearl);font-size:21px;font-weight:550;letter-spacing:.04em;padding:9px 14px;appearance:none}
+.stt-input::placeholder{color:#a39cb9;font-size:16px;font-weight:400}
+.input-hint{margin:11px 0 0;color:#a8a0bf;font-size:11px;line-height:1.5}
+.input-error{margin:0;color:#ffd6e9;font-size:12px;line-height:1.55;min-height:0}
+.input-error:not(:empty){padding-top:13px}
+.lookup-btn{width:100%;margin-top:23px;min-height:51px}
+.lookup-footnote{margin:23px auto 0;color:rgba(215,208,234,.6);font-size:11px;line-height:1.65}
+
+/* CẢNH 03 — các ngôi sao nối về ngôi sao đại diện */
+.scene--recognize .recognize-inner{max-width:680px;margin-top:clamp(300px,59dvh,585px)}
+.recognize-title{font-family:var(--font-serif);color:#f6eeff;font-weight:500;font-size:clamp(27px,4.8vw,47px);letter-spacing:-.03em;line-height:1.25;margin:0 0 13px;text-shadow:0 0 20px rgba(213,184,255,.25)}
+.recognize-sub{font-size:13px;line-height:1.7;color:#d7cee9;margin:0}
+.scene--recognize .eyebrow{color:var(--lavender)}
+
+/* CẢNH 06 — lời chúc cuối sau trang thư */
+.scene--closing .closing-inner{max-width:760px;margin-top:clamp(210px,37dvh,370px)}
+.closing-for{color:#d4baf5;letter-spacing:.15em;font-size:12px;margin:0 0 15px}
+.closing-title{font-family:var(--font-serif);font-weight:500;letter-spacing:-.038em;line-height:1.15;font-size:clamp(34px,5.7vw,61px);margin:0 auto 22px;text-wrap:balance}
+.closing-note{color:#c6c0de;line-height:1.75;font-size:14px;max-width:520px;margin:0 auto 24px}
+.closing-date{font-family:var(--font-serif);font-style:italic;color:#f7e2b9;font-size:16px;margin:0 auto 28px}
+.closing-back{margin:0 auto}
+.scene--closing::before{content:'';pointer-events:none;position:fixed;top:14dvh;left:calc(50% + 30px);width:140px;height:1px;transform-origin:left center;background:linear-gradient(90deg,#f4e8ffbb,#c5b0ff66,transparent);opacity:0;animation:trail-pass 2.9s ease-out 500ms 1 forwards;filter:drop-shadow(0 0 7px #e6cbff)}
+
+
+/* responsive.css */
+/* Mobile first: mọi giá trị chạm tối thiểu 44px, chữ >=14px cho phần đọc. */
+@media(max-width:720px){
+  .header-meta{font-size:9px;letter-spacing:.09em}
+  .site-header{padding-top:calc(15px + env(safe-area-inset-top));padding-bottom:12px}
+  .scene{padding-left:max(17px,env(safe-area-inset-left));padding-right:max(17px,env(safe-area-inset-right))}
+  .scene--intro .intro-inner{margin-top:clamp(175px,32dvh,270px)}
+  .scene--lookup .lookup-inner{margin-top:clamp(148px,22dvh,190px)}
+  .lookup-form{padding:23px 21px 22px}
+  .letter-actions{grid-template-columns:1fr 1fr}
+  .letter-actions .soft-btn:last-child{grid-column:1/-1}
+}
+@media(max-width:520px){
+  .header-meta{display:none}
+  .site-header{padding-left:21px;padding-right:21px}
+  .site-brand{font-size:10px;letter-spacing:.19em;gap:8px}
+  .brand-mark{font-size:19px}
+  .eyebrow{font-size:9px;letter-spacing:.18em;margin-bottom:15px}
+  .scene--intro .intro-inner{margin-top:clamp(169px,29dvh,260px)}
+  .intro-title{font-size:clamp(31px,8vw,43px);line-height:1.12;margin-bottom:13px}
+  .intro-lead{font-size:13.5px;line-height:1.72;margin-bottom:20px;max-width:330px}
+  .date-divider{margin-bottom:21px}
+  .date-text{font-size:10px}
+  .start-btn{width:auto;max-width:100%;padding:13px 19px;font-size:12px;gap:9px;min-height:49px}
+  .skip-intro{font-size:11px;margin-top:9px}
+  .morph-object[data-stage='intro']{top:23dvh;width:100px;height:100px}
+  .morph-object[data-stage='lookup']{top:16dvh;width:70px;height:70px}
+  .scene--lookup .lookup-inner{margin-top:clamp(150px,21dvh,200px)}
+  .scene-title{font-size:clamp(28px,7.5vw,36px);margin-bottom:15px}
+  .scene-lead{font-size:13.5px;line-height:1.68;margin-bottom:23px}
+  .lookup-form{border-radius:19px;padding:21px 18px 20px}
+  .input-row{height:58px}
+  .lookup-btn{margin-top:18px;padding:12px}
+  .lookup-footnote{font-size:10.5px;margin-top:18px}
+  .morph-object[data-stage='recognize']{width:165px;height:165px;top:38dvh}
+  .morph-object[data-stage='envelope']{width:min(320px,85vw);height:206px;top:42dvh}
+  .constellation-svg{width:93vw;height:53vh;top:38dvh}
+  .scene--recognize .recognize-inner{margin-top:clamp(295px,55dvh,500px)}
+  .recognize-title{font-size:clamp(25px,7vw,36px)}
+  .morph-object[data-stage='letter']{height:calc(100dvh - 152px);width:calc(100vw - 24px);border-radius:19px}
+  .letter-sheet,.morph-object[data-stage='letter'] .letter-sheet{border-radius:19px}
+  .letter-scroll{padding:27px 22px 33px}
+  .letter-title{font-size:35px}
+  .letter-body{font-size:15.5px;line-height:1.82}
+  .letter-body p{margin-bottom:18px}
+  .letter-date{letter-spacing:.14em;font-size:8.5px}
+  .letter-to{font-size:11px;margin-bottom:18px}
+  .paper-divider{margin-bottom:24px}
+  .site-footer{font-size:9px;gap:8px;padding-bottom:calc(12px + env(safe-area-inset-bottom))}
+  .morph-object[data-stage='closing']{top:23dvh;width:120px;height:120px}
+  .scene--closing .closing-inner{margin-top:clamp(190px,35dvh,320px)}
+  .closing-title{font-size:clamp(30px,8vw,41px)}
+  .closing-note{font-size:13px}
+}
+@media(max-width:350px){
+  .scene{padding-left:15px;padding-right:15px}
+  .scene--intro .intro-inner{margin-top:162px}
+  .intro-title{font-size:30px}
+  .intro-lead{font-size:12.5px}
+  .lookup-form{padding:17px 15px}
+  .scene--lookup .lookup-inner{margin-top:137px}
+  .scene-title{font-size:27px}
+  .scene-lead{font-size:12.5px;margin-bottom:17px}
+  .lookup-footnote{margin-top:12px}
+  .letter-scroll{padding:23px 18px 28px}
+  .letter-title{font-size:31px}
+  .letter-body{font-size:15px}
+  .site-footer{font-size:8.5px}
+  .letter-actions{grid-template-columns:1fr}
+  .letter-actions .soft-btn:last-child{grid-column:auto}
+}
+@media(max-height:650px) and (orientation:portrait){
+  .morph-object[data-stage='intro']{top:22dvh}
+  .scene--intro .intro-inner{margin-top:clamp(142px,28dvh,205px)}
+  .scene--intro .eyebrow{margin-bottom:8px}
+  .intro-title{margin-bottom:8px}
+  .intro-lead{margin-bottom:11px}
+  .date-divider{margin-bottom:13px}
+  .scene--lookup .lookup-inner{margin-top:clamp(125px,23dvh,160px)}
+  .morph-object[data-stage='lookup']{top:13dvh}
+  .scene--recognize .recognize-inner{margin-top:clamp(250px,50dvh,320px)}
+  .morph-object[data-stage='letter']{height:calc(100dvh - 125px)}
+  .scene--closing .closing-inner{margin-top:clamp(165px,31dvh,225px)}
+}
+@media(max-height:460px) and (orientation:landscape){
+  .site-header{padding-top:calc(7px + env(safe-area-inset-top));padding-bottom:6px}
+  .site-footer{display:none}
+  .scene{padding-top:45px;padding-bottom:16px;align-items:center}
+  .scene-inner{max-width:610px}
+  .scene--intro .intro-inner,.scene--lookup .lookup-inner,.scene--closing .closing-inner{width:58%;max-width:550px;margin:0 0 0 auto}
+  .scene--intro .eyebrow,.scene--lookup .eyebrow,.scene--closing .eyebrow{margin-bottom:8px}
+  .intro-title{font-size:clamp(25px,3.6vw,44px);margin-bottom:6px}
+  .intro-lead{font-size:12px;line-height:1.4;margin-bottom:8px}
+  .date-divider{margin-bottom:9px}
+  .skip-intro{margin-top:3px}
+  .scene-title{font-size:clamp(22px,3.3vw,38px);margin-bottom:6px}
+  .scene-lead{font-size:12px;margin-bottom:8px;line-height:1.4}
+  .lookup-form{padding:12px 14px;border-radius:14px}
+  .input-label{margin-bottom:4px;font-size:9px}
+  .input-row{height:44px}
+  .input-hint{display:none}
+  .lookup-btn{min-height:44px;margin-top:9px;padding:7px;font-size:11px}
+  .lookup-footnote{margin-top:7px;font-size:10px}
+  .morph-object[data-stage='intro'],.morph-object[data-stage='lookup'],.morph-object[data-stage='closing']{left:21%;top:50dvh;width:100px;height:100px}
+  .morph-object[data-stage='recognize']{top:50dvh;left:32%;width:130px;height:130px}
+  .morph-object[data-stage='envelope']{top:50dvh;left:32%;height:170px;width:245px}
+  .morph-object[data-stage='letter']{top:52dvh;left:50%;height:calc(100dvh - 76px);width:min(730px,calc(100vw - 28px))}
+  .scene--recognize .recognize-inner{width:55%;margin:0 0 0 auto}
+  .recognize-title{font-size:26px}
+  .constellation-svg{left:32%;top:50dvh;height:80vh;width:55vw}
+  .closing-title{font-size:clamp(24px,3.3vw,41px);margin-bottom:8px}
+  .closing-note{font-size:12px;line-height:1.4;margin-bottom:8px}
+  .closing-date{font-size:13px;margin-bottom:10px}
+  .closing-back{min-height:40px;padding:8px 14px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .nebula{filter:blur(38px)}
+  .morph-core,.wish-star{animation:none!important}
+  .constellation-line{stroke-dashoffset:0!important}
+  .constellation-dot{opacity:1!important}
+}
+.reduced-motion .morph-core,.reduced-motion .morph-halo,.reduced-motion .morph-orbit,.reduced-motion .morph-ray,.reduced-motion .nebula,.reduced-motion .wish-star{animation:none!important}
+
+
+</style>
+</head>
+<body>
+  <div id="app">
+    <p style="padding:30px;text-align:center;color:#f2e7ff">Đang chuẩn bị bầu trời dành riêng cho bạn…</p>
+  </div>
+  <noscript><p style="padding:25px;color:#faf6ff;text-align:center">Trang này cần JavaScript để tìm ngôi sao và mở lá thư. Hãy bật JavaScript trong trình duyệt để trải nghiệm nhé.</p></noscript>
+  <script type="module">
+
+// ---- utils/dom ----
+/** Element builder: luôn dùng textContent cho dữ liệu người nhận, tránh HTML injection. */
+function el                                       (
+  tag   , className = '', text = ''
+)                           {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (text) node.textContent = text;
+  return node;
+}
+
+function wait(ms        , signal              )                {
+  return new Promise((resolve) => {
+    if (signal?.aborted) { resolve(); return; }
+    const timer = window.setTimeout(finish, ms);
+    function finish() { window.clearTimeout(timer); signal?.removeEventListener('abort', finish); resolve(); }
+    signal?.addEventListener('abort', finish, { once: true });
+  });
+}
+
+
+// ---- data/eventConfig ----
+                              
+                
+                   
+                    
+                   
+                              
+                           
+                 
+                       
+                           
+                       
+                         
+ 
+
+/** Thay đổi nội dung và các công tắc tại duy nhất file này. */
+const eventConfig              = {
+  title: 'GALAXY LETTERS',
+  subtitle: 'Một vũ trụ nhỏ, dành riêng cho bạn.',
+  eventDate: '2027-03-08',
+  timezone: 'Asia/Ho_Chi_Minh',
+  schoolYearReference: '10A5 — 2024–2025',
+  currentClassName: '', // Chưa xác nhận tên lớp hiện tại.
+  sender: 'Một người bạn trong lớp',
+  enableAudio: false,
+  enableParticles: true,
+  enableIntro: true,
+  showCountdown: false
+};
+
+
+// ---- data/recipients ----
+                            
+              
+                   
+                      
+                   
+                              
+                        
+                    
+                                                
+ 
+
+/**
+ * STT MỚI đã đối chiếu đúng với Master Prompt đính chính.
+ * Không lưu 22 người không nhận thư, số 34 dành cho Thông và KHÔNG có thư.
+ * Xin đối chiếu cách hiển thị họ tên và sự đồng ý của người nhận trước khi xuất bản.
+ */
+const recipients                       = [
+  { stt: 1, fullName: 'Lê Thị Kim Anh', displayName: 'Kim Anh', letterId: 'letter-1' },
+  { stt: 5, fullName: 'Trần Hoàng Mỹ Đình', displayName: 'Mỹ Đình', letterId: 'letter-5' },
+  { stt: 6, fullName: 'Cao Ngọc Gia Hân', displayName: 'Gia Hân', letterId: 'letter-6' },
+  { stt: 8, fullName: 'Hoàng Thị Anh Hồng', displayName: 'Anh Hồng', letterId: 'letter-8' },
+  { stt: 10, fullName: 'Phạm Voòng Xuân Hương', displayName: 'Xuân Hương', letterId: 'letter-10' },
+  { stt: 17, fullName: 'Vũ Trần Minh Khuê', displayName: 'Minh Khuê', letterId: 'letter-17' },
+  { stt: 18, fullName: 'Lee Huan Ling', displayName: 'Ling', letterId: 'letter-18' },
+  { stt: 19, fullName: 'Trần Thị Ánh Minh', displayName: 'Ánh Minh', letterId: 'letter-19' },
+  { stt: 20, fullName: 'Trương Hoàng Giáng My', displayName: 'Giáng My', letterId: 'letter-20' },
+  { stt: 22, fullName: 'Đoàn Trần Bảo Ngọc', displayName: 'Bảo Ngọc', letterId: 'letter-22' },
+  { stt: 23, fullName: 'Đào Nguyễn Ánh Ngọc', displayName: 'Ánh Ngọc', letterId: 'letter-23' },
+  { stt: 24, fullName: 'Phan Nguyễn Khánh Ngọc', displayName: 'Khánh Ngọc', letterId: 'letter-24' },
+  { stt: 25, fullName: 'Nguyễn Hồng Ngọc', displayName: 'Hồng Ngọc', letterId: 'letter-25' },
+  { stt: 32, fullName: 'Nguyễn Thị Phương Thảo', displayName: 'Phương Thảo', letterId: 'letter-32' },
+  { stt: 33, fullName: 'Lý Minh Thư', displayName: 'Minh Thư', letterId: 'letter-33' },
+  { stt: 35, fullName: 'Phan Ngọc Anh Thư', displayName: 'Anh Thư', letterId: 'letter-35' },
+  { stt: 36, fullName: 'Trần Võ Anh Thư', displayName: 'Võ Anh Thư', letterId: 'letter-36' },
+  { stt: 40, fullName: 'Đoàn Thị Tường Vy', displayName: 'Tường Vy', letterId: 'letter-40' },
+  { stt: 41, fullName: 'Lê Ngọc Tường Vy', displayName: 'Ngọc Tường Vy', letterId: 'letter-41' },
+  { stt: 42, fullName: 'Bùi Thị Thanh Xuân', displayName: 'Thanh Xuân', letterId: 'letter-42' },
+  { stt: 43, fullName: 'Trần Như Ý', displayName: 'Như Ý', letterId: 'letter-43' },
+  { stt: 44, fullName: 'Nguyễn Thùy Hải Yến', displayName: 'Hải Yến', letterId: 'letter-44' },
+  { stt: 45, fullName: 'Nguyễn Thụy Nhất Linh', displayName: 'Nhất Linh', letterId: 'letter-45', isFormerClassmate: true },
+  { stt: 46, fullName: 'Phạm Nguyễn Thiên Nga', displayName: 'Thiên Nga', letterId: 'letter-46', isFormerClassmate: true }
+];
+
+const recipientByStt                                 = new Map(
+  recipients.map((recipient) => [recipient.stt, recipient])
+);
+
+
+// ---- data/letters ----
+                                 
+                   
+                                                             
+                 
+ 
+
+/** 24 lá thư viết độc lập. Mỗi thư hướng đến một thông điệp, không khẳng định kỷ niệm chưa biết. */
+const letters                                           = {
+  'letter-1': {
+    greeting: 'Gửi Kim Anh,',
+    paragraphs: [
+      'Có những cánh cửa mở ra thật khẽ, đến mức ta chỉ nhận ra khi phía trước đã là một khoảng trời mới. Mình nghĩ những năm tháng cuối thời học sinh cũng giống như thế: mỗi ngày tưởng chừng bình thường, rồi một hôm nhìn lại, ta thấy mình đã đi được một quãng rất xa.',
+      'Nhân ngày 8/3, mình muốn gửi đến Kim Anh một lời chúc không quá ồn ào. Mong bạn đủ tự tin để thử những điều còn lạ, đủ kiên nhẫn để đi qua những bài toán khó của tuổi trẻ, và đủ dịu dàng với chính mình khi mọi chuyện chưa đúng như dự định.',
+      'Nếu có lúc đứng trước nhiều lựa chọn, hy vọng bạn sẽ nhớ rằng không cần bước nhanh hơn bất kỳ ai. Chỉ cần mỗi quyết định đưa bạn gần hơn với điều thật sự quan trọng. Chúc những cánh cửa sắp tới mở ra bằng niềm háo hức, chứ không phải nỗi sợ.'
+    ],
+    ending: 'Chúc mừng ngày 8/3/2027!'
+  },
+  'letter-5': {
+    greeting: 'Gửi Mỹ Đình,',
+    paragraphs: [
+      'Nếu cuộc sống là một tấm bản đồ, có lẽ đẹp nhất không phải những con đường được vẽ sẵn, mà là những lối rẽ ta dần tự khám phá. Ở tuổi này, phía trước có biết bao ngã rẽ; chẳng ai có thể biết hết đâu là lối đi hoàn hảo, và điều đó cũng chẳng sao cả.',
+      'Ngày 8/3 này, mình chúc Mỹ Đình có một chiếc la bàn thật đặc biệt: không chỉ hướng về thành tích hay sự mong đợi của người khác, mà hướng về điều khiến bạn thấy mình được là chính mình. Mong bạn can đảm hỏi, dám thử, biết dừng lại nghỉ khi cần và không ngại bắt đầu lại.',
+      'Sẽ có những ngày nắng đẹp, cũng có những chặng đường nhiều mây. Nhưng một hành trình ý nghĩa không cần bầu trời lúc nào cũng quang đãng. Hy vọng bạn sẽ gặp những người tốt, những cơ hội đáng quý, và luôn giữ được sự háo hức khi nhìn vào trang bản đồ chưa được mở.'
+    ],
+    ending: 'Chúc mừng ngày 8/3/2027!'
+  },
+  'letter-6': {
+    greeting: 'Gửi Gia Hân,',
+    paragraphs: [
+      'Đôi khi điều ta cần giữa một tuần bận rộn chỉ là vài phút thật yên: một cốc nước mát, một khoảng trời chiều, hay một câu nói khiến lòng nhẹ đi. Những niềm vui nho nhỏ ấy không làm thế giới thay đổi, nhưng có thể khiến một ngày bình thường trở nên đáng nhớ.',
+      'Mình gửi Gia Hân lời chúc 8/3 với mong muốn bạn có thật nhiều khoảnh khắc như vậy. Mong những cố gắng của bạn được nhìn nhận xứng đáng, những điều chưa trọn vẹn không khiến bạn tự trách quá lâu, và những niềm vui giản dị luôn có một chỗ trong lịch trình mỗi ngày.',
+      'Khi nghĩ đến tương lai, ai cũng dễ chú ý tới những cột mốc lớn. Nhưng hy vọng trên đường tới đó, bạn vẫn dành thời gian cho bản thân và những người mình quý. Chúc Gia Hân tìm được nhịp sống riêng: có ước mơ để bước tới, có bình yên để trở về, và có lý do để mỉm cười hôm nay.'
+    ],
+    ending: 'Chúc mừng ngày 8/3/2027!'
+  },
+  'letter-8': {
+    greeting: 'Gửi Anh Hồng,',
+    paragraphs: [
+      'Một cuốn sách hay không chỉ có những chương rực rỡ. Đôi khi trang đáng nhớ nhất lại là trang có vài dòng gạch xóa, một dấu hỏi bên lề, hay một đoạn ta phải đọc lại mới hiểu. Mình thấy tuổi học trò cũng vậy: chẳng cần trang nào cũng phải hoàn hảo.',
+      'Nhân ngày 8/3, chúc Anh Hồng luôn giữ được sự tò mò để viết tiếp câu chuyện của mình. Mong bạn đừng vì một lần chưa như ý mà vội kết luận về cả hành trình. Có những điều hôm nay còn khó, nhưng rồi sẽ trở thành một phần khiến bạn trưởng thành và hiểu mình hơn.',
+      'Mình mong những chương mới đem đến nhiều cuộc gặp gỡ tử tế, những bài học thú vị và cả những khoảng nghỉ vui vẻ. Nếu đôi khi cần lật sang trang khác, cứ làm điều đó bằng lòng tin. Cuốn sách này thuộc về bạn, và bạn có quyền chọn cách kể câu chuyện của chính mình.'
+    ],
+    ending: 'Chúc mừng ngày 8/3/2027!'
+  },
+  'letter-10': {
+    greeting: 'Gửi Xuân Hương,',
+    paragraphs: [
+      'Có một điều rất lạ ở đầu mùa: đôi khi ta không nhìn thấy sự thay đổi ngay, mà chỉ cảm nhận được qua làn gió hay mùi hương thoảng qua. Sự trưởng thành cũng âm thầm như thế. Mỗi ngày học thêm một chút, hiểu thêm một chút, rồi bất chợt nhận ra mình đã khác.',
+      'Vào ngày 8/3, mình chúc Xuân Hương đón nhận những đổi thay sắp tới bằng lòng tin và sự bình thản. Nếu một kế hoạch chưa thành, mong bạn vẫn nhìn thấy những điều tốt đang lớn dần. Nếu một ước mơ còn xa, mong bạn tìm được niềm vui trong từng bước nhỏ hướng về nó.',
+      'Không cần phải rực rỡ mọi lúc mới là một mùa đẹp. Có những ngày chỉ cần khỏe mạnh, ngủ ngon và được làm điều mình thích đã rất đáng quý. Hy vọng mỗi mùa đi qua đều để lại cho bạn một điều đáng nhớ, và mỗi mùa sắp đến đều mang theo một lý do mới để hy vọng.'
+    ],
+    ending: 'Chúc mừng ngày 8/3/2027!'
+  },
+  'letter-17': {
+    greeting: 'Gửi Minh Khuê,',
+    paragraphs: [
+      'Người ta có thể dùng những tọa độ rất chính xác để tìm một ngôi sao, nhưng không có công thức nào đủ đơn giản để chỉ ra con đường phù hợp nhất với mỗi người. Phía trước là khoảng không rộng lớn của những lựa chọn, và đôi khi chính sự chưa biết lại làm hành trình thú vị.',
+      'Ngày 8/3, mình muốn chúc Minh Khuê luôn đủ tò mò để đặt câu hỏi và đủ bản lĩnh để tìm câu trả lời của riêng mình. Mong những mục tiêu lớn trở thành động lực chứ không phải sức ép, và những lần thử sai chỉ giúp bạn hiểu thêm đâu là điều thực sự có ý nghĩa.',
+      'Một bầu trời không chỉ đẹp vì những ngôi sao sáng nhất, mà còn vì cách mỗi điểm sáng góp vào cả bức tranh. Hy vọng bạn sẽ không so sánh hành trình của mình với quỹ đạo người khác. Chỉ cần biết mình đang đi về đâu, từng bước tiến nhỏ cũng đã là điều đáng tự hào.'
+    ],
+    ending: 'Chúc mừng ngày 8/3/2027!'
+  },
+  'letter-18': {
+    greeting: 'Gửi Ling,',
+    paragraphs: [
+      'Có những lời chúc dù được viết bằng ngôn ngữ nào vẫn mang cùng một ý nghĩa: mong người nhận có một ngày thật vui và một tương lai nhiều điều tốt đẹp. Vì vậy, hôm nay mình muốn gửi đến Ling một lời nhắn giản dị, không cầu kỳ, nhưng được đặt vào đây bằng tất cả sự trân trọng.',
+      'Chúc bạn trong những năm tháng sắp tới được khám phá nhiều điều khiến mình hứng thú, gặp những người biết lắng nghe và có đủ tự tin để nói lên suy nghĩ của bản thân. Mong những ngày nhiều việc vẫn có chỗ cho tiếng cười, còn những ngày khó khăn luôn có một điều nhỏ giúp bạn vững lòng.',
+      'Thế giới rộng lớn giống một bản hòa âm có rất nhiều giai điệu. Bạn không cần phải hát theo nhịp của bất kỳ ai để có vị trí riêng trong bản nhạc ấy. Hy vọng Ling sẽ giữ được giai điệu của mình, thử những nốt nhạc mới và tận hưởng từng chặng đường đang mở ra.'
+    ],
+    ending: 'Chúc mừng ngày 8/3/2027!'
+  },
+  'letter-19': {
+    greeting: 'Gửi Ánh Minh,',
+    paragraphs: [
+      'Buổi sáng đôi khi bắt đầu chỉ bằng một vệt sáng mỏng qua khung cửa. Nó không làm mọi thứ thay đổi ngay lập tức, nhưng đủ để ta biết một ngày mới đã đến. Mình thích nghĩ về hy vọng theo cách ấy: không cần lớn lao, chỉ cần xuất hiện đúng lúc và cho ta thêm can đảm.',
+      'Nhân ngày 8/3, mình chúc Ánh Minh luôn tìm thấy những khoảng sáng dành cho mình. Có thể đó là một tin vui bất ngờ, một kết quả đến sau nhiều cố gắng, hoặc đơn giản là cảm giác nhẹ lòng sau khi vượt qua điều từng khiến bạn lo lắng. Mong bạn ghi nhận từng bước tiến của bản thân.',
+      'Nếu đôi khi mọi chuyện chưa rõ ràng, cũng không sao. Ánh sáng cần thời gian để lan qua một căn phòng, và con người cần thời gian để lớn lên. Chúc bạn kiên trì với điều mình tin, không quên nghỉ ngơi, và luôn có người đồng hành thật tử tế trên đường phía trước.'
+    ],
+    ending: 'Chúc mừng ngày 8/3/2027!'
+  },
+  'letter-20': {
+    greeting: 'Gửi Giáng My,',
+    paragraphs: [
+      'Hãy tưởng tượng có một chiếc hộp nhỏ được gửi đến tương lai, bên trong là vài điều ta muốn nhắn với chính mình của nhiều năm sau. Có lẽ ta sẽ bỏ vào đó những mong ước còn đang ấp ủ, cả những băn khoăn của tuổi học trò mà sau này đọc lại sẽ thấy thương.',
+      'Ngày 8/3 này, mình chúc Giáng My có đủ trải nghiệm đẹp để một ngày nào đó mở chiếc hộp tưởng tượng ấy với nụ cười. Mong bạn không ngại viết ra những ước mơ táo bạo, nhưng cũng không quên trân trọng hiện tại. Không phải giấc mơ nào cũng cần trở thành một kế hoạch ngay lập tức.',
+      'Nếu gửi thêm một mảnh giấy vào hộp, mình sẽ viết rằng: hãy tin vào khả năng lớn lên của bản thân. Những điều chưa biết hôm nay rồi có thể học được, những đoạn đường khó rồi có thể đi qua. Chúc bạn có thật nhiều ký ức ấm áp để mang theo tới phiên bản tương lai của mình.'
+    ],
+    ending: 'Chúc mừng ngày 8/3/2027!'
+  },
+  'letter-22': {
+    greeting: 'Gửi Bảo Ngọc,',
+    paragraphs: [
+      'Có những viên sỏi nằm bên đường, thoạt nhìn bình thường. Nhưng nếu nhặt lên và quan sát kỹ, ta sẽ thấy mỗi viên có những đường vân riêng. Những điều bé nhỏ trong cuộc sống cũng vậy: đôi khi phải chậm lại một chút mới nhận ra vẻ đáng quý của chúng.',
+      'Mình muốn dùng ngày 8/3 để chúc Bảo Ngọc có nhiều niềm vui không cần lý do quá lớn. Mong bạn biết tự thưởng cho mình sau một ngày cố gắng, bớt khắt khe với những thiếu sót, và luôn có cơ hội thử sức ở những lĩnh vực khiến bạn tò mò. Mỗi trải nghiệm đều có thể để lại một điều hay.',
+      'Trong những năm tới, chắc hẳn sẽ có nhiều thứ thay đổi. Hy vọng giữa nhịp sống nhanh, bạn vẫn giữ được khả năng nhận ra điều đẹp đẽ rất gần: một lời động viên, một buổi chiều mát, một mục tiêu vừa đạt được. Chúc hành trình của bạn được tạo nên từ thật nhiều khoảnh khắc đáng gìn giữ.'
+    ],
+    ending: 'Chúc mừng ngày 8/3/2027!'
+  },
+  'letter-23': {
+    greeting: 'Gửi Ánh Ngọc,',
+    paragraphs: [
+      'Một chiếc kính vạn hoa xoay nhẹ là những mảnh màu quen thuộc đã tạo thành bức tranh khác. Cuộc sống cũng có những lúc như thế: cùng một sự việc, chỉ cần thử nhìn ở góc khác, ta có thể thấy một câu trả lời hoặc điều chưa từng nghĩ tới.',
+      'Nhân ngày 8/3, mình chúc Ánh Ngọc luôn có sự linh hoạt ấy khi bước vào những chặng đường sắp tới. Mong bạn không bị một lần vấp váp định nghĩa, không ngại thay đổi kế hoạch khi cần, và giữ được niềm vui học hỏi ngay cả khi câu hỏi khó hơn trước. Không phải câu trả lời nào cũng đến ngay.',
+      'Kính vạn hoa đẹp vì không bức tranh nào tồn tại mãi, và điều đó khiến lần xoay tiếp theo trở nên đáng mong chờ. Hy vọng bạn cũng tìm thấy sự thú vị trong những thay đổi của tuổi trẻ. Chúc mỗi năm mới đem đến thêm màu sắc, thêm hiểu biết và thêm sự tự tin để chọn điều phù hợp với mình.'
+    ],
+    ending: 'Chúc mừng ngày 8/3/2027!'
+  },
+  'letter-24': {
+    greeting: 'Gửi Khánh Ngọc,',
+    paragraphs: [
+      'Những cơn mưa đầu mùa thường đến bất chợt. Có lúc ta chỉ muốn chạy thật nhanh để tránh ướt, nhưng cũng có hôm đứng dưới mái hiên, nghe tiếng mưa và nhận ra một khoảng lặng thật dễ chịu. Không phải điều gì đến ngoài dự tính cũng là điều không tốt.',
+      'Mình chúc Khánh Ngọc một ngày 8/3 thật nhẹ nhàng, cùng nhiều ngày phía trước đủ rộng để bạn vừa cố gắng vừa nghỉ ngơi. Mong bạn kiên nhẫn với những mục tiêu cần thời gian, biết nhờ giúp đỡ khi cần và không xem những thay đổi bất ngờ là dấu chấm hết cho kế hoạch của mình.',
+      'Sau mưa, đường phố không nhất thiết phải có cầu vồng mới trở nên đẹp. Chỉ cần không khí trong hơn và ta thấy dễ thở đã là điều đáng mừng. Hy vọng bạn luôn nhận ra những tín hiệu tốt, dù rất nhỏ, trong cuộc sống hằng ngày. Chúc những bước chân sắp tới vững vàng mà vẫn đầy háo hức.'
+    ],
+    ending: 'Chúc mừng ngày 8/3/2027!'
+  },
+  'letter-25': {
+    greeting: 'Gửi Hồng Ngọc,',
+    paragraphs: [
+      'Bầu trời lúc hoàng hôn hiếm khi chỉ có một màu. Có hôm cam ấm, hôm phớt hồng, có hôm tím nhạt; những lớp màu hòa vào nhau mà không cần lớp nào nổi bật hơn. Mỗi người có nhiều sắc thái, chẳng cần giống hình dung của người khác.',
+      'Nhân ngày 8/3, mình chúc Hồng Ngọc được tự do khám phá những phần khác nhau của bản thân. Mong bạn có thể mạnh mẽ khi cần, dịu lại khi muốn, thay đổi suy nghĩ khi hiểu thêm điều mới và tự tin bảo vệ điều mình coi trọng. Không ai phải luôn vui vẻ hay luôn giỏi giang mới xứng đáng được trân trọng.',
+      'Những năm học trò sẽ dần đi qua, để lại rất nhiều sắc màu trong ký ức. Hy vọng sau này nhìn lại, bạn sẽ thấy mình đã sống thật với những lựa chọn và không bỏ quên niềm vui nhỏ nào. Chúc cuộc sống phía trước mở ra những gam màu chưa từng thử, nhưng vẫn hài hòa theo cách của bạn.'
+    ],
+    ending: 'Chúc mừng ngày 8/3/2027!'
+  },
+  'letter-32': {
+    greeting: 'Gửi Phương Thảo,',
+    paragraphs: [
+      'Một mầm cây không vươn lên chỉ sau một đêm. Nó cần ánh sáng, nước, đất tốt và cả những khoảng thời gian tưởng như không có gì xảy ra. Có lẽ việc theo đuổi một ước mơ cũng vậy: tiến bộ đôi khi rất yên lặng, đến mức ta dễ quên rằng mình vẫn đang lớn lên.',
+      'Ngày 8/3 này, chúc Phương Thảo đủ kiên nhẫn để chăm sóc những điều mình thật sự muốn xây dựng. Mong bạn không quá vội so sánh kết quả với người khác, vì mỗi người có một nhịp phát triển riêng. Những bước nhỏ, nếu được giữ bằng sự bền bỉ, vẫn có thể đưa ta tới nơi đáng mong chờ.',
+      'Trong hành trình ấy, mong bạn nhớ chăm sóc chính mình. Không phải ngày nào cũng cần gắng hết sức; có lúc nghỉ ngơi là cách tốt nhất để tiếp tục. Chúc những hạt giống bạn gieo hôm nay dần thành điều khiến bạn tự hào, và mỗi mùa mới đều mang lại thêm chút bình yên.'
+    ],
+    ending: 'Chúc mừng ngày 8/3/2027!'
+  },
+  'letter-33': {
+    greeting: 'Gửi Minh Thư,',
+    paragraphs: [
+      'Có câu chuyện bắt đầu từ một trang giấy trắng. Ban đầu, trang giấy ấy có thể khiến ta ngần ngại: nên viết điều gì trước, có sợ sai không, liệu câu chuyện rồi sẽ đi đến đâu? Nhưng có lẽ điều quan trọng nhất là cho phép bản thân đặt xuống dòng chữ đầu tiên.',
+      'Nhân ngày 8/3, mình chúc Minh Thư có can đảm với những khởi đầu chưa hoàn hảo. Mong bạn tìm được niềm vui khi thử một điều mới, được công nhận cho những cố gắng âm thầm và giữ được sự dịu dàng với bản thân trong những ngày mọi thứ chưa đúng kế hoạch. Một bản nháp vẫn có giá trị của nó.',
+      'Nếu một chương không diễn ra như mong đợi, bạn hoàn toàn có thể viết tiếp theo hướng khác. Cuộc đời không cần một cốt truyện duy nhất để trở nên đáng yêu. Chúc bạn gặp nhiều người bạn tốt, có những ngày đáng nhớ và có quyền viết nên câu chuyện thật riêng của chính mình.'
+    ],
+    ending: 'Chúc mừng ngày 8/3/2027!'
+  },
+  'letter-35': {
+    greeting: 'Gửi Anh Thư,',
+    paragraphs: [
+      'Dải Ngân Hà nhìn từ xa giống một con đường bằng ánh sáng. Nhưng thực ra chẳng có vạch kẻ nào chỉ sẵn hướng đi cho từng ngôi sao. Mỗi điểm sáng có một vị trí, một khoảng cách, và chính sự khác nhau ấy mới tạo thành bầu trời rộng đến thế.',
+      'Vì vậy, ngày 8/3 này mình muốn chúc Anh Thư luôn tin vào đường đi của riêng mình. Mong bạn thử sức với điều khiến bạn háo hức, không vội bỏ cuộc khi gặp một khúc quanh, và không thấy mình chậm chỉ vì người khác đang tiến nhanh. Mỗi lựa chọn góp thành hành trình đáng giá.',
+      'Sẽ có lúc tương lai trông như một bầu trời nhiều mây, chưa nhìn rõ điểm đến. Hy vọng những khi ấy bạn vẫn có thể dựa vào điều mình yêu thích và những người thật lòng quan tâm. Chúc bạn có nhiều phát hiện bất ngờ, nhiều ngày bình yên và đủ dũng khí để bước vào vùng trời mình chọn.'
+    ],
+    ending: 'Chúc mừng ngày 8/3/2027!'
+  },
+  'letter-36': {
+    greeting: 'Gửi Võ Anh Thư,',
+    paragraphs: [
+      'Một chiếc đồng hồ có những kim chuyển động ở tốc độ khác nhau, nhưng cả ba vẫn thuộc về cùng một mặt số. Mình thích hình ảnh ấy vì nó nhắc rằng không phải điều gì cũng diễn ra nhanh. Có những thành quả cần nhiều tháng, còn có niềm vui chỉ mất vài giây để xuất hiện.',
+      'Nhân ngày 8/3, chúc Võ Anh Thư tìm được nhịp độ hợp với mình giữa những lịch học và dự định. Mong bạn không quên nghỉ ngơi khi mệt, biết tự hào về tiến bộ dù nhỏ, vẫn dành chỗ cho điều khiến hôm nay thú vị. Thời gian cho bản thân không hề lãng phí.',
+      'Khi những cột mốc mới đến gần, hy vọng bạn sẽ đón chúng bằng tâm thế sẵn sàng mà không quá vội vàng. Có lúc cần bước nhanh, có lúc chỉ cần bước đều; điều quan trọng là hướng đi có ý nghĩa với bạn. Chúc mỗi lần nhìn lại, bạn đều thấy mình đã sử dụng thời gian một cách đáng trân trọng.'
+    ],
+    ending: 'Chúc mừng ngày 8/3/2027!'
+  },
+  'letter-40': {
+    greeting: 'Gửi Tường Vy,',
+    paragraphs: [
+      'Một bông hoa không cần nở vào đúng ngày người khác mong đợi. Có loài thích nắng sớm, có loài đợi một cơn mưa, cũng có loài lặng lẽ lớn lên qua nhiều mùa. Mình nghĩ đây là một cách thật đẹp để nhớ rằng mỗi người có thời điểm và con đường trưởng thành riêng.',
+      'Nhân ngày 8/3, mình chúc Tường Vy luôn được tôn trọng với những lựa chọn của bản thân. Mong bạn không phải gồng mình để đáp ứng mọi kỳ vọng, có thể nói ra điều mình cần, và vẫn sẵn lòng thử những điều khiến trái tim thấy tò mò. Những ước mơ dù còn nhỏ cũng xứng đáng được nuôi dưỡng.',
+      'Nếu có một mùa chưa như ý, đó không có nghĩa tất cả những mùa sau đều sẽ như vậy. Hy vọng bạn giữ được niềm tin vào những cơ hội tiếp theo và có người ở bên khi cần một lời động viên. Chúc bạn bước qua từng mùa bằng sự tự do, nhẹ nhõm và nhiều niềm vui thật lòng.'
+    ],
+    ending: 'Chúc mừng ngày 8/3/2027!'
+  },
+  'letter-41': {
+    greeting: 'Gửi Ngọc Tường Vy,',
+    paragraphs: [
+      'Có lẽ cánh buồm đẹp nhất không phải khi biển hoàn toàn lặng gió, mà khi nó học cách đón từng luồng gió khác nhau để đi tiếp. Những thay đổi đôi khi khiến ta bối rối, nhưng cũng có thể đưa đến những vùng nước và chân trời mà trước đó mình chưa từng nghĩ tới.',
+      'Ngày 8/3 này, mình chúc Ngọc Tường Vy có đủ lòng tin để điều chỉnh hướng đi khi cần. Mong bạn không sợ phải học lại một điều, không thấy mình thất bại khi thay đổi mục tiêu, và không quên cảm nhận niềm vui trên hành trình. Đi đúng hướng với bản thân quan trọng hơn đi thật nhanh.',
+      'Sẽ có ngày gió thuận, cũng có ngày phải kiên nhẫn chờ đợi. Hy vọng bạn luôn có điểm tựa tốt, những người bạn chân thành và một khoảng bình yên để trở về. Chúc cánh buồm ước mơ của bạn đi qua nhiều bến bờ đáng nhớ, mang theo những trải nghiệm khiến bạn hiểu mình hơn.'
+    ],
+    ending: 'Chúc mừng ngày 8/3/2027!'
+  },
+  'letter-42': {
+    greeting: 'Gửi Thanh Xuân,',
+    paragraphs: [
+      'Hai chữ “thanh xuân” thường gợi lên những ngày nhiều tiếng cười, nhưng mình nghĩ chúng còn chứa cả sự bỡ ngỡ, những lần phân vân và rất nhiều điều đang học cách hiểu. Tuổi trẻ không nhất thiết phải hoàn hảo mới đáng nhớ; chính những trải nghiệm khác nhau mới làm nó trở nên chân thật.',
+      'Nhân ngày 8/3, mình chúc Thanh Xuân tận hưởng những ngày hiện tại theo nhịp của mình. Mong bạn không quá lo rằng mình phải có mọi đáp án ngay bây giờ. Có những câu hỏi chỉ thời gian mới giúp ta trả lời, và trong khi chờ đợi, bạn vẫn xứng đáng có những khoảng thời gian vui vẻ.',
+      'Sau này, khi nhìn lại những năm tháng học trò, hy vọng bạn sẽ không chỉ nhớ các cột mốc lớn mà còn mỉm cười vì những ngày rất bình thường. Chúc bạn luôn có người để chia sẻ, những mục tiêu để phấn đấu và đủ bao dung để yêu quý cả phiên bản đang học hỏi của chính mình.'
+    ],
+    ending: 'Chúc mừng ngày 8/3/2027!'
+  },
+  'letter-43': {
+    greeting: 'Gửi Như Ý,',
+    paragraphs: [
+      'Ai cũng mong nhiều điều trong cuộc sống diễn ra như ý, nhưng đôi khi chính những khúc quanh ngoài dự đoán lại dẫn ta đến một góc nhìn hay. Một con đường không đi thẳng vẫn có thể là con đường đẹp, nếu trên đó ta hiểu thêm về bản thân và điều mình thật sự muốn.',
+      'Ngày 8/3, mình chúc Như Ý nhiều ngày thuận lợi, nhưng còn chúc bạn có sự vững vàng trong cả những ngày không thuận lợi. Mong bạn không đánh giá bản thân chỉ bằng kết quả, biết tự cho mình cơ hội thứ hai và đủ dũng cảm để nói “mình sẽ thử lại” khi cần.',
+      'Những dự định sắp tới có thể sẽ thay đổi vài lần, và điều đó không lấy đi giá trị của ước mơ ban đầu. Hy vọng bạn gặp những cơ hội phù hợp, những người chân thành và những khoảng lặng giúp mình chọn hướng đi. Chúc bạn luôn biết điều gì làm mình hạnh phúc, kể cả khi thế giới xung quanh thay đổi.'
+    ],
+    ending: 'Chúc mừng ngày 8/3/2027!'
+  },
+  'letter-44': {
+    greeting: 'Gửi Hải Yến,',
+    paragraphs: [
+      'Trên mặt biển rộng, một ngọn hải đăng không quyết định con tàu phải đi đâu. Nó chỉ mang đến một điểm sáng để người đi biển nhận ra phương hướng trong đêm. Đôi khi những lời động viên cũng như vậy: không chọn thay ta, chỉ giúp ta tin mình có thể đi tiếp.',
+      'Nhân ngày 8/3, mình chúc Hải Yến luôn tìm thấy những điểm sáng như thế trên hành trình trưởng thành. Mong bạn có những người sẵn lòng lắng nghe, có cơ hội khám phá điều mình yêu thích và có đủ bình tĩnh khi phải đứng trước một lựa chọn lớn. Không cần biết hết mọi thứ mới có thể bắt đầu.',
+      'Biển có lúc lặng, có lúc nổi sóng, nhưng vẫn luôn mở ra những chân trời mới. Hy vọng bạn sẽ không vì một ngày nhiều gió mà quên nhìn về phía trước. Chúc từng chặng đường đem đến những phát hiện thú vị, và bạn luôn giữ được quyền tự do chọn bến bờ phù hợp với mình.'
+    ],
+    ending: 'Chúc mừng ngày 8/3/2027!'
+  },
+  'letter-45': {
+    greeting: 'Gửi Nhất Linh,',
+    paragraphs: [
+      'Có những khoảng thời gian không kéo dài mãi nhưng vẫn trở thành một phần đẹp trong câu chuyện của mỗi người. Những ngày từng chung lớp cũng vậy: rồi lịch học, phòng học và những con đường khác đi, nhưng sự trân trọng dành cho một người bạn vẫn ở lại.',
+      'Ngày 8/3 này, mình muốn gửi Nhất Linh một lời chúc thật ấm áp, như một tấm thiệp nhỏ đi qua khoảng cách giữa lớp học. Mong nơi bạn đang bước tiếp có nhiều điều thú vị, những người bạn tử tế và cơ hội để bạn khám phá khả năng của bản thân. Hy vọng mỗi ngày đều có một điều khiến bạn mỉm cười.',
+      'Dù không còn cùng một tập thể lớp ở hiện tại, bạn vẫn được nhớ đến bằng sự quý mến và những lời chúc tốt lành. Chúc Nhất Linh bình an trước những thay đổi, tự tin với lựa chọn của mình và luôn cảm thấy có những tình bạn đáng trân trọng ở nhiều nơi trên hành trình.'
+    ],
+    ending: 'Chúc mừng ngày 8/3/2027!'
+  },
+  'letter-46': {
+    greeting: 'Gửi Thiên Nga,',
+    paragraphs: [
+      'Buổi bình minh trên mỗi dòng sông có thể mang màu khác, nhưng ánh sáng của ngày mới vẫn đến với tất cả. Mình thích hình ảnh ấy khi nghĩ về những người bạn giờ đi trên những hành trình riêng: không cần ở cùng nơi mới có thể gửi cho nhau một lời chúc chân thành.',
+      'Nhân ngày 8/3, mong Thiên Nga sẽ có nhiều khởi đầu đáng mong đợi ở môi trường hiện tại. Chúc bạn gặp những người biết trân trọng mình, có trải nghiệm làm đôi mắt thêm tò mò và đủ vững vàng trước những điều còn mới. Những ngày chung lớp là kỷ niệm đáng quý, không phải điều gì cần phải buồn khi nhớ lại.',
+      'Tương lai có thể đưa mỗi người đi xa theo một hướng, nhưng sự tử tế luôn có cách vượt qua khoảng cách ấy. Mình chúc bạn đón nhiều bình minh vui vẻ, đủ tự tin mở những cánh cửa mới và luôn có thể nhìn về năm học trò bằng nụ cười nhẹ nhõm.'
+    ],
+    ending: 'Chúc mừng ngày 8/3/2027!'
+  }
+};
+
+
+// ---- utils/validateStt ----
+                            
+                             
+                                   
+
+/** Không lộ danh sách người nhận; chỉ kiểm tra cú pháp và khoảng STT 1–46. */
+function validateStt(raw        )                 {
+  const normalized = raw.trim();
+  if (!/^[0-9]+$/.test(normalized)) {
+    return { ok: false, message: 'Hãy nhập số thứ tự của bạn bằng chữ số từ 1 đến 46 nhé.' };
+  }
+  const stt = Number(normalized);
+  if (!Number.isSafeInteger(stt) || stt < 1 || stt > 46) {
+    return { ok: false, message: 'Số thứ tự hợp lệ nằm trong khoảng từ 1 đến 46.' };
+  }
+  return { ok: true, stt };
+}
+
+
+// ---- utils/visualSeed ----
+                         
+                 
+                    
+              
+                                                   
+                     
+                     
+  
+const PALETTE                                                 = [
+  ['#d4bcff', '#90d9ff', 261],
+  ['#ffc5e3', '#d4bcff', 330],
+  ['#fff0c1', '#ffc5e3', 42],
+  ['#90d9ff', '#c5d7ff', 199],
+  ['#e0ccff', '#ffe4cf', 276],
+  ['#bde6e8', '#ded0ff', 171],
+  ['#f3cfff', '#ffe1ec', 290],
+  ['#cbd5ff', '#ffdbf0', 231]
+];
+
+/** Cùng một STT sẽ có màu và chòm sao giống nhau ở mọi lần truy cập. */
+function makeVisualSeed(stt        )            {
+  let seed = (stt * 2654435761) >>> 0;
+  function rand()         {
+    seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0;
+    return seed / 4294967296;
+  }
+  const swatch = PALETTE[Math.floor(rand() * PALETTE.length)];
+  const count = 6 + Math.floor(rand() * 3);
+  const points                     = [];
+  for (let i = 0; i < count; i++) {
+    const angle = (i / count) * Math.PI * 2 - Math.PI / 2 + (rand() - .5) * .6;
+    const radius = .22 + rand() * .25;
+    points.push([.5 + Math.cos(angle) * radius, .5 + Math.sin(angle) * radius]);
+  }
+  return {
+    accent: swatch[0], secondary: swatch[1], hue: swatch[2],
+    points, orbitAngle: rand() * 360, burstCount: 10 + Math.floor(rand() * 10)
+  };
+}
+
+
+// ---- hooks/useReducedMotion ----
+function prefersReducedMotion()          {
+  return typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+function observeReducedMotion(onChange                          )             {
+  const media = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const handle = () => onChange(media.matches);
+  media.addEventListener('change', handle);
+  handle();
+  return () => media.removeEventListener('change', handle);
+}
+
+
+// ---- components/Envelope ----
+
+/** Vỏ thư thật gồm mặt sau, giấy kéo ra, mặt trước, nắp có perspective rotateX. */
+function createEnvelope()               {
+  const root = el('div', 'envelope-shell');
+  root.setAttribute('aria-hidden', 'true');
+  const back = el('div', 'envelope-back');
+  const paper = el('div', 'envelope-insert');
+  paper.append(el('div', 'envelope-insert-star', '✦'));
+  const recipient = el('div', 'envelope-insert-name', 'Dành riêng cho bạn');
+  paper.append(recipient, el('div', 'envelope-insert-date', '08 . 03 . 2027'));
+  const front = el('div', 'envelope-front');
+  const flap = el('div', 'envelope-flap');
+  const wax = el('div', 'envelope-seal', '✧');
+  root.append(back, paper, front, flap, wax);
+  return {
+    root,
+    setName: (name) => { recipient.textContent = `Gửi ${name}`; },
+    setOpen: (open) => root.classList.toggle('opened', open)
+  };
+}
+
+
+// ---- components/GalaxyBackground ----
+
+
+/** Canvas 2D theo hệ số DPR, tiết kiệm CPU/battery, không chặn touch scroll. */
+function createGalaxyBackground()                                             {
+  const root = el('div', 'galaxy-backdrop');
+  root.setAttribute('aria-hidden', 'true');
+  root.append(el('div', 'nebula nebula-purple'), el('div', 'nebula nebula-blue'), el('div', 'nebula nebula-rose'));
+  const canvas = el('canvas', 'star-canvas');
+  root.append(canvas);
+  const ctx = canvas.getContext('2d', { alpha: true, desynchronized: true });
+  if (!ctx || !eventConfig.enableParticles) return { root, destroy: () => undefined };
+
+  let width = 0; let height = 0; let dpr = 1;
+  let stars         = [];
+  let frameId = 0; let lastFrame = 0; let lastShooting = 0;
+  let shooting = { visible: false, born: 0, x: 0, y: 0 };
+  let reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let disposed = false; let pointerX = 0; let pointerY = 0;
+  const motionMedia = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const lowPower = window.matchMedia('(max-width: 600px)').matches || (navigator.hardwareConcurrency || 8) <= 4;
+  const fps = lowPower ? 30 : 45;
+  const frameInterval = 1000 / fps;
+
+  function resize()       {
+    width = window.innerWidth; height = window.innerHeight;
+    dpr = Math.min(window.devicePixelRatio || 1, lowPower ? 1.5 : 1.8);
+    canvas.width = Math.ceil(width * dpr);
+    canvas.height = Math.ceil(height * dpr);
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
+    ctx .setTransform(dpr, 0, 0, dpr, 0, 0);
+    const desired = Math.min(350, Math.max(105, Math.round((width * height) / (lowPower ? 3100 : 3000))));
+    // Mỗi lần resize tái tạo ít sao với seed cố định để tránh bước nhảy lớn.
+    let seed = 0x27D7B;
+    const rand = () => ((seed = (Math.imul(1664525, seed) + 1013904223) >>> 0) / 4294967296);
+    stars = Array.from({ length: desired }, ()       => ({
+      x: rand(), y: rand(),
+      radius: .34 + rand() * (rand() > .94 ? 1.75 : .84),
+      phase: rand() * Math.PI * 2, speed: .26 + rand() * 1.0,
+      alpha: .25 + rand() * .62, depth: .25 + rand() * .75,
+      hue: rand() > .82 ? 210 : rand() > .5 ? 267 : 43
+    }));
+    draw(performance.now());
+  }
+  function draw(now        )       {
+    ctx .clearRect(0, 0, width, height);
+    const t = now * .001;
+    const parallaxX = reduced ? 0 : pointerX * 4;
+    const parallaxY = reduced ? 0 : pointerY * 4;
+    // Các chòm sao nền rất mảnh, không tranh sự chú ý với chữ.
+    if (width > 350) {
+      ctx .strokeStyle = 'rgba(188,184,239,.075)'; ctx .lineWidth = .7;
+      const connect = [[3,8],[8,14],[14,19],[38,44],[44,49],[49,53],[65,70],[70,77],[77,80],[91,94],[94,99]];
+      for (let k = 0; k < connect.length; k++) {
+        const a = stars[connect[k][0] % stars.length], b = stars[connect[k][1] % stars.length];
+        const dx = (a.x - b.x) * width, dy = (a.y - b.y) * height;
+        if (dx * dx + dy * dy > 550 * 550) continue;
+        ctx .beginPath();
+        ctx .moveTo(a.x * width, a.y * height);
+        ctx .lineTo(b.x * width, b.y * height);
+        ctx .stroke();
+      }
+    }
+    for (let i = 0; i < stars.length; i++) {
+      const s = stars[i];
+      const twinkle = reduced ? 1 : .81 + Math.sin(t * s.speed + s.phase) * .19;
+      const a = Math.min(1, s.alpha * twinkle);
+      const x = s.x * width + parallaxX * s.depth;
+      const y = s.y * height + parallaxY * s.depth;
+      ctx .beginPath();
+      ctx .fillStyle = `hsla(${s.hue}, 85%, 91%, ${a.toFixed(3)})`;
+      ctx .arc(x, y, s.radius, 0, Math.PI * 2);
+      ctx .fill();
+      if (s.radius > 1.45) {
+        ctx .strokeStyle = `rgba(250,242,255,${a * .28})`;
+        ctx .lineWidth = .5;
+        ctx .beginPath();ctx .moveTo(x-5,y);ctx .lineTo(x+5,y);ctx .moveTo(x,y-5);ctx .lineTo(x,y+5);ctx .stroke();
+      }
+    }
+    if (!reduced && shooting.visible) {
+      const age = now - shooting.born;
+      if (age > 1000) shooting.visible = false;
+      else {
+        const p = age / 1000;
+        const x = shooting.x - p * Math.min(width*.35,300), y = shooting.y + p * Math.min(height*.3,180);
+        const gradient = ctx .createLinearGradient(x+85,y-55,x,y);
+        gradient.addColorStop(0, 'rgba(255,255,255,0)');
+        gradient.addColorStop(.75, `rgba(173,210,255,${(1-p)*.14})`);
+        gradient.addColorStop(1, `rgba(250,247,255,${(1-p)*.8})`);
+        ctx .strokeStyle = gradient;ctx .lineWidth = 1.5;
+        ctx .beginPath();ctx .moveTo(x+85,y-55);ctx .lineTo(x,y);ctx .stroke();
+      }
+    }
+    if (!reduced && now - lastShooting > 10500 && now > 4000) {
+      lastShooting = now + Math.random() * 4500;
+      shooting = { visible: true, born: now, x: width * (.58 + Math.random()*.4), y: height * (.06 + Math.random() * .31) };
+    }
+  }
+  function tick(now        )       {
+    frameId = 0;
+    if (disposed || document.hidden || reduced) return;
+    if (now - lastFrame >= frameInterval) { lastFrame = now; draw(now); }
+    frameId = requestAnimationFrame(tick);
+  }
+  function updateLoop()       {
+    cancelAnimationFrame(frameId); frameId = 0;
+    if (!disposed && !document.hidden) {
+      draw(performance.now());
+      if (!reduced) frameId = requestAnimationFrame(tick);
+    }
+  }
+  const onVisibility = () => updateLoop();
+  const onResize = () => { resize(); updateLoop(); };
+  const onMotion = () => { reduced = motionMedia.matches; updateLoop(); };
+  const onPointer = (e              ) => {
+    if (e.pointerType !== 'mouse') return;
+    pointerX = (e.clientX / Math.max(1,width) - .5) * 2;
+    pointerY = (e.clientY / Math.max(1,height) - .5) * 2;
+  };
+  window.addEventListener('resize', onResize, { passive: true });
+  document.addEventListener('visibilitychange', onVisibility);
+  motionMedia.addEventListener('change', onMotion);
+  window.addEventListener('pointermove', onPointer, { passive: true });
+  resize(); updateLoop();
+  return {
+    root,
+    destroy() {
+      disposed = true;cancelAnimationFrame(frameId);
+      window.removeEventListener('resize', onResize);
+      document.removeEventListener('visibilitychange', onVisibility);
+      motionMedia.removeEventListener('change', onMotion);
+      window.removeEventListener('pointermove', onPointer);
+    }
+  };
+}
+
+
+// ---- components/IntroScene ----
+
+function createIntroScene(onStart            )              {
+  const section = el('section', 'scene scene--intro scene--active');
+  section.id = 'scene-intro';
+  section.setAttribute('aria-labelledby', 'intro-title');
+  const main = el('div', 'scene-inner intro-inner');
+  const kicker = el('p', 'eyebrow', 'MỘT MÓN QUÀ ĐƯỢC GỬI TỪ VŨ TRỤ');
+  const title = el('h1', 'intro-title', 'Một vũ trụ nhỏ,');
+  title.id = 'intro-title';
+  const titleEm = el('span', 'headline-italics', 'dành riêng cho bạn.');
+  title.append(el('br'), titleEm);
+  const subtitle = el('p', 'intro-lead', 'Giữa hàng tỷ vì sao, có một ngôi sao mang tên bạn. Và một lá thư đang đợi được mở.');
+  const day = el('div', 'date-divider');
+  day.append(el('span', 'divider-line'), el('span', 'date-text', '08 · 03 · 2027'), el('span', 'divider-line'));
+  const start = el('button', 'primary-btn start-btn', 'Khám phá vũ trụ của mình');
+  start.type = 'button';
+  start.append(el('span', 'btn-sparkle', '✦'));
+  start.addEventListener('click', onStart);
+  const skip = el('button', 'text-btn subtle skip-intro', 'Bỏ qua lời mở đầu');
+  skip.type = 'button';
+  skip.addEventListener('click', onStart);
+  main.append(kicker, title, subtitle, day, start, skip);
+  section.append(main);
+  return section;
+}
+
+
+// ---- components/StudentLookup ----
+
+
+
+function createStudentLookup(onFound                       )                     {
+  const root = el('section', 'scene scene--lookup');
+  root.id = 'scene-lookup';
+  root.setAttribute('aria-labelledby', 'lookup-title');
+  const inner = el('div', 'scene-inner lookup-inner');
+  const kicker = el('p', 'eyebrow', 'BƯỚC 01 · TÌM NGÔI SAO CỦA BẠN');
+  const heading = el('h2', 'scene-title', 'Mỗi người đều có một');
+  const em = el('span', 'headline-italics', 'vị trí riêng trên bầu trời.');
+  heading.id = 'lookup-title';
+  heading.append(el('br'), em);
+  const lead = el('p', 'scene-lead', 'Nhập số thứ tự của bạn trong lớp để tìm lá thư dành riêng cho mình nhé.');
+  const form = el('form', 'lookup-form');
+  form.noValidate = true;
+  const label = el('label', 'input-label', 'SỐ THỨ TỰ TRONG LỚP');
+  label.htmlFor = 'student-stt';
+  const row = el('div', 'input-row');
+  const icon = el('span', 'input-prefix', '✦');
+  icon.setAttribute('aria-hidden', 'true');
+  const input = el('input', 'stt-input');
+  input.id = 'student-stt';
+  input.name = 'stt';
+  input.type = 'text';
+  input.inputMode = 'numeric';
+  input.pattern = '[0-9]*';
+  input.autocomplete = 'off';
+  input.maxLength = 4;
+  input.placeholder = 'Ví dụ: 19';
+  input.setAttribute('enterkeyhint', 'go');
+  input.setAttribute('aria-describedby', 'lookup-helper lookup-error');
+  input.setAttribute('aria-required', 'true');
+  row.append(icon, input);
+  const helper = el('p', 'input-hint', 'Chỉ cần STT của riêng bạn · Từ 01 đến 46');
+  helper.id = 'lookup-helper';
+  const error = el('p', 'input-error');
+  error.id = 'lookup-error';
+  error.setAttribute('role', 'status');
+  error.setAttribute('aria-live', 'polite');
+  const button = el('button', 'primary-btn lookup-btn', 'Thắp sáng ngôi sao của mình');
+  button.type = 'submit';
+  button.append(el('span', 'btn-sparkle', '✦'));
+  const aside = el('p', 'lookup-footnote', 'Món quà này không yêu cầu đăng nhập và không lưu số bạn nhập.');
+  form.append(label, row, helper, error, button);
+  form.addEventListener('submit', (ev) => {
+    ev.preventDefault();
+    error.textContent = '';
+    input.removeAttribute('aria-invalid');
+    const result = validateStt(input.value);
+    if (!result.ok) {
+      error.textContent = result.message;
+      input.setAttribute('aria-invalid', 'true');
+      input.focus();
+      return;
+    }
+    if (!recipientByStt.has(result.stt)) {
+      error.textContent = 'STT này hiện chưa có thư riêng trong món quà. Bạn hãy kiểm tra lại số của mình nhé.';
+      input.setAttribute('aria-invalid', 'true');
+      return;
+    }
+    onFound(result.stt);
+  });
+  input.addEventListener('input', () => { error.textContent = ''; input.removeAttribute('aria-invalid'); });
+  inner.append(kicker, heading, lead, form, aside);
+  root.append(inner);
+  return { root, input, form, error, reset: () => { form.reset(); error.textContent = ''; input.removeAttribute('aria-invalid'); } };
+}
+
+
+// ---- components/StarField ----
+
+/** Các đường chòm sao hiển thị theo seed STT, vẽ bằng SVG để đường có thể được 'viết ra'. */
+function createStarField()                {
+  const root = el('div', 'constellation-layer');
+  root.setAttribute('aria-hidden', 'true');
+  let current                       = null;
+  let appearanceFrame = 0;
+  function show(theme           )       {
+    cancelAnimationFrame(appearanceFrame);
+    root.classList.remove('is-visible');
+    root.style.setProperty('--accent', theme.accent);
+    root.style.setProperty('--secondary', theme.secondary);
+    current?.remove();
+    const ns = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(ns, 'svg');
+    svg.setAttribute('viewBox', '0 0 100 100');
+    svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+    svg.classList.add('constellation-svg');
+    const connections = [...theme.points, theme.points[0]];
+    const polyline = document.createElementNS(ns, 'polyline');
+    polyline.setAttribute('points', connections.map(([x,y]) => `${x * 100},${y * 100}`).join(' '));
+    polyline.setAttribute('fill', 'none');
+    polyline.setAttribute('stroke', 'var(--accent)');
+    polyline.setAttribute('stroke-width', '.17');
+    polyline.setAttribute('stroke-linejoin', 'round');
+    polyline.setAttribute('vector-effect', 'non-scaling-stroke');
+    polyline.classList.add('constellation-line');
+    svg.append(polyline);
+    theme.points.forEach(([x,y],i) => {
+      const ring = document.createElementNS(ns, 'circle');
+      ring.setAttribute('cx', `${x*100}`); ring.setAttribute('cy', `${y*100}`); ring.setAttribute('r', '1.0');
+      ring.setAttribute('fill', 'var(--accent)'); ring.classList.add('constellation-dot');
+      ring.style.animationDelay = `${i * 80}ms`;
+      svg.append(ring);
+    });
+    current = svg; root.append(svg);
+    appearanceFrame = requestAnimationFrame(() => root.classList.add('is-visible'));
+  }
+  function launchParticle(origin             , reduced         )       {
+    if (reduced) return;
+    const particle = el('div', 'comet-particle');
+    root.append(particle);
+    const from = origin.getBoundingClientRect();
+    const x = from.left + from.width / 2;
+    const y = from.top + from.height / 2;
+    const toX = window.innerWidth / 2;
+    const toY = window.innerHeight * .40;
+    particle.style.left = `${x}px`; particle.style.top = `${y}px`;
+    particle.animate([
+      { transform: 'translate(-50%, -50%) scale(.2)', opacity: 0, offset: 0 },
+      { transform: `translate(${(toX-x)*.46}px,${(toY-y)*.6-45}px) scale(1.3)`, opacity: 1, offset: .43 },
+      { transform: `translate(${toX-x}px,${toY-y}px) scale(.1)`, opacity: 0, offset: 1 }
+    ], { duration: 970, easing: 'cubic-bezier(.25,.5,.25,1)', fill: 'forwards' }).finished.catch(() => undefined).finally(() => particle.remove());
+  }
+  return { root, show, hide: () => { cancelAnimationFrame(appearanceFrame); root.classList.remove('is-visible'); }, launchParticle };
+}
+
+
+// ---- components/MorphTransition ----
+
+
+/**
+ * MỘT DOM NODE DUY NHẤT tồn tại xuyên suốt sáu cảnh. Kích thước, vị trí,
+ * hình học và trạng thái của nó được chuyển tiếp bằng CSS, không remount.
+ * Ngôi sao → hào quang → phong thư → mặt giấy → khung thư → ngôi sao.
+ */
+function createMorphTransition()            {
+  const root = el('div', 'morph-object');
+  root.id = 'morph-object';
+  root.dataset.stage = 'intro';
+  root.setAttribute('aria-label', 'Ngôi sao dẫn đường');
+  const halo = el('div', 'morph-halo');
+  const orbitA = el('div', 'morph-orbit morph-orbit-a');
+  const orbitB = el('div', 'morph-orbit morph-orbit-b');
+  const core = el('div', 'morph-core');
+  const ray = el('div', 'morph-ray');
+  const envelope = createEnvelope();
+  const sheet = el('article', 'letter-sheet');
+  sheet.id = 'letter-sheet';
+  sheet.setAttribute('aria-labelledby', 'letter-heading');
+  sheet.setAttribute('aria-hidden', 'true');
+  sheet.inert = true;
+  root.append(halo, orbitA, orbitB, core, ray, envelope.root, sheet);
+  return {
+    root, sheet,
+    stage: (stage) => {
+      root.dataset.stage = stage;
+      const opened = stage === 'letter';
+      sheet.setAttribute('aria-hidden', opened ? 'false' : 'true');
+      sheet.inert = !opened;
+    },
+    setRecipient: (name, theme) => {
+      envelope.setName(name);
+      root.style.setProperty('--accent', theme.accent);
+      root.style.setProperty('--secondary', theme.secondary);
+      root.style.setProperty('--orbit-angle', `${theme.orbitAngle}deg`);
+    },
+    setOpened: envelope.setOpen
+  };
+}
+
+
+// ---- components/LetterView ----
+
+
+function createLetterView(actions               )             {
+  const root = el('div', 'letter-scroll');
+  const ornament = el('div', 'paper-ornament', '✧  ·  ✦  ·  ✧');
+  const stamp = el('div', 'letter-date', 'MỘT LÁ THƯ TỪ VŨ TRỤ · 08.03.2027');
+  const heading = el('h2', 'letter-title'); heading.id = 'letter-heading';
+  heading.tabIndex = -1;
+  const under = el('p', 'letter-to');
+  const divider = el('div', 'paper-divider'); divider.setAttribute('aria-hidden', 'true');
+  const body = el('div', 'letter-body');
+  const ending = el('p', 'letter-ending');
+  const signature = el('p', 'letter-signature', `Từ ${eventConfig.sender.toLocaleLowerCase('vi')},`);
+  const signDetail = el('p', 'signature-detail', 'với tất cả sự trân trọng.');
+  const actionsRow = el('div', 'letter-actions');
+  const reread = el('button', 'soft-btn', '↺  Đọc lại thư'); reread.type = 'button';
+  const back = el('button', 'soft-btn', '✧  Quay về bầu trời'); back.type = 'button';
+  const share = el('button', 'soft-btn', '↗  Chia sẻ món quà này'); share.type = 'button';
+  reread.addEventListener('click', actions.onReplay);
+  back.addEventListener('click', actions.onBack);
+  share.addEventListener('click', actions.onShare);
+  actionsRow.append(reread, back, share);
+  const wishArea = el('div', 'wish-area');
+  const wishCopy = el('p', 'wish-instruction', 'Còn một lời chúc nữa, đang đợi ở cuối bầu trời…');
+  const wish = el('button', 'wish-star', '✦'); wish.type = 'button';
+  wish.setAttribute('aria-label', 'Chạm vào ngôi sao để xem lời chúc cuối');
+  wish.addEventListener('click', actions.onWish);
+  const wishLabel = el('span', 'wish-label', 'Chạm vào ngôi sao');
+  wishArea.append(wishCopy, wish, wishLabel);
+  root.append(ornament, stamp, heading, under, divider, body, ending, signature, signDetail, actionsRow, wishArea);
+  return {
+    root,
+    render(recipient, letter) {
+      heading.textContent = `Gửi ${recipient.displayName},`;
+      under.textContent = `Lá thư dành riêng cho ${recipient.displayName}`;
+      body.replaceChildren(...letter.paragraphs.map((content) => el('p', '', content)));
+      ending.textContent = letter.ending;
+      signature.textContent = `Từ ${eventConfig.sender.toLocaleLowerCase('vi')},`;
+      root.scrollTop = 0;
+    },
+    focus: () => heading.focus({ preventScroll: true })
+  };
+}
+
+
+// ---- components/ClosingScene ----
+
+function createClosingScene(onBack            )               {
+  const root = el('section', 'scene scene--closing');
+  root.id = 'scene-closing';
+  root.setAttribute('aria-labelledby', 'closing-title');
+  const inner = el('div', 'scene-inner closing-inner');
+  const tag = el('p', 'eyebrow', 'MỘT LỜI CHÚC CUỐI CÙNG');
+  const name = el('p', 'closing-for', 'Dành riêng cho bạn');
+  const heading = el('h2', 'closing-title', 'Mong rằng bạn sẽ luôn');
+  heading.id = 'closing-title'; heading.tabIndex = -1;
+  heading.append(el('br'), el('span', 'headline-italics', 'tìm thấy ánh sáng của riêng mình.'));
+  const note = el('p', 'closing-note', 'Dù hành trình đưa bạn đến đâu, mong mọi điều tử tế vẫn luôn tìm được đường đến bên bạn.');
+  const signature = el('p', 'closing-date', 'Happy Women’s Day — 08.03.2027');
+  const back = el('button', 'outline-btn closing-back', '←  Trở về bầu trời');
+  back.type = 'button'; back.addEventListener('click', onBack);
+  inner.append(tag, name, heading, note, signature, back);
+  root.append(inner);
+  return { root, setName: (value) => { name.textContent = `Một vì sao dành cho ${value}`; } };
+}
+
+
+// ---- components/AudioToggle ----
+
+/** Tiếng ngân nguyên bản được tổng hợp bằng Web Audio; chỉ khởi phát sau khi chạm. */
+function createAudioToggle()                    {
+  const button = el('button', 'audio-toggle', '♪  Bật âm thanh');
+  button.type = 'button';
+  button.setAttribute('aria-pressed', 'false');
+  button.title = 'Âm thanh tùy chọn, mặc định tắt';
+  let ctx                      = null;
+  let timer = 0;
+  let enabled = false;
+  function play()       {
+    if (!ctx || ctx.state !== 'running') return;
+    const now = ctx.currentTime;
+    const notes = [261.63, 329.63, 392.0];
+    const oscillators                   = [];
+    for (let i = 0; i < notes.length; i++) {
+      const oscillator = ctx.createOscillator();
+      const gain = ctx.createGain();
+      oscillator.type = 'sine'; oscillator.frequency.value = notes[i] / 2;
+      gain.gain.setValueAtTime(0, now);
+      gain.gain.linearRampToValueAtTime(.015, now + 1.2 + .2 * i);
+      gain.gain.exponentialRampToValueAtTime(.0001, now + 4.6);
+      oscillator.connect(gain).connect(ctx.destination);
+      oscillator.start(now); oscillator.stop(now + 4.8);
+      oscillators.push(oscillator);
+    }
+  }
+  async function setEnabled(value         )                {
+    enabled = value;
+    button.setAttribute('aria-pressed', String(value));
+    button.textContent = value ? '♪  Tắt âm thanh' : '♪  Bật âm thanh';
+    window.clearInterval(timer);
+    if (value) {
+      const AudioContextClass = window.AudioContext;
+      if (!AudioContextClass) { enabled = false; button.textContent = 'Không hỗ trợ âm thanh'; button.disabled = true; return; }
+      ctx ??= new AudioContextClass();
+      try { await ctx.resume(); play(); timer = window.setInterval(play, 7000); }
+      catch { enabled = false; button.setAttribute('aria-pressed', 'false'); button.textContent = '♪  Bật âm thanh'; }
+    } else if (ctx) await ctx.suspend();
+  }
+  button.addEventListener('click', () => { void setEnabled(!enabled); });
+  window.addEventListener('pagehide', () => { window.clearInterval(timer); void ctx?.close(); }, { once: true });
+  return button;
+}
+
+
+// ---- App ----
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Điều phối các cảnh theo một state machine tối giản và huỷ được.
+ * Phần tử morph tồn tại xuyên suốt, KHÔNG bị tạo lại khi đổi scene.
+ */
+function mountApp(host             )             {
+  const shell = el('div', 'app-shell');
+  shell.dataset.scene = 'intro';
+  const galaxy = createGalaxyBackground();
+  const starField = createStarField();
+  const morph = createMorphTransition();
+  const foreground = el('div', 'story-foreground');
+  const header = el('header', 'site-header');
+  const brand = el('div', 'site-brand');
+  brand.append(el('span', 'brand-mark', '✦'), el('span', 'brand-name', 'GALAXY LETTERS'));
+  const meta = el('div', 'header-meta', 'MỘT MÓN QUÀ ĐẶC BIỆT · 08.03.2027');
+  header.append(brand, meta);
+  if (eventConfig.enableAudio) header.append(createAudioToggle());
+  const story = el('main', 'story-root');
+  story.id = 'main-content';
+  const toast = el('div', 'toast-message');
+  toast.setAttribute('role', 'status'); toast.setAttribute('aria-live', 'polite');
+  const footer = el('footer', 'site-footer');
+  footer.append(el('span', '', 'Được viết bằng tất cả sự trân trọng'), el('span', 'footer-sigil', '✧'), el('span', '', '08 . 03 . 2027'));
+  const skipMotion = el('button', 'skip-motion', 'Bỏ qua hiệu ứng');
+  skipMotion.type = 'button';
+  skipMotion.hidden = true;
+  const recognizing = el('section', 'scene scene--recognize');
+  recognizing.id = 'scene-recognize';
+  const recognizeInner = el('div', 'scene-inner recognize-inner');
+  const recognizeTag = el('p', 'eyebrow', 'BƯỚC 02 · NGÔI SAO ĐÃ ĐÁP LỜI');
+  const recognizeName = el('h2', 'recognize-title');
+  const recognizeSub = el('p', 'recognize-sub', 'Một lời chúc từ những người bạn của bạn.');
+  recognizeInner.append(recognizeTag, recognizeName, recognizeSub);
+  recognizing.append(recognizeInner);
+
+  let stage           = 'intro';
+  let recipient                   = null;
+  let motionController                         = null;
+  let motionReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let showToastTimer = 0;
+  let sceneUpdateTimer = 0;
+
+  const intro = createIntroScene(() => enterLookup());
+  const lookup = createStudentLookup((stt) => { void beginReveal(stt); });
+  const closing = createClosingScene(() => enterLookup());
+  const letterView = createLetterView({
+    onBack: () => enterLookup(),
+    onReplay: () => {
+      letterView.root.scrollTo({ top: 0, behavior: motionReduced ? 'instant' : 'smooth' });
+      const paper = morph.sheet;
+      if (!motionReduced) void paper.animate([
+        { filter: 'brightness(1.03)' }, { filter: 'brightness(1)' }
+      ], { duration: 680, easing: 'ease-out' }).finished.catch(() => undefined);
+      letterView.focus();
+    },
+    onShare: () => { void shareGift(); },
+    onWish: () => showClosing()
+  });
+  morph.sheet.append(letterView.root);
+  story.append(intro, lookup.root, recognizing, closing.root);
+  foreground.append(header, story, footer, skipMotion, toast);
+  shell.append(galaxy.root, starField.root, morph.root, foreground);
+  host.replaceChildren(shell);
+  const allScenes = [intro, lookup.root, recognizing, closing.root];
+  function setActiveScene(target                    )       {
+    for (const scene of allScenes) {
+      const active = scene === target;
+      scene.classList.toggle('scene--active', active);
+      scene.setAttribute('aria-hidden', active ? 'false' : 'true');
+      scene.inert = !active;
+    }
+  }
+  function setStage(value          )       {
+    stage = value;
+    shell.dataset.scene = value;
+    morph.stage(value);
+    skipMotion.hidden = value !== 'recognize' || motionReduced;
+    if (value === 'intro') setActiveScene(intro);
+    if (value === 'lookup') setActiveScene(lookup.root);
+    if (value === 'recognize') setActiveScene(recognizing);
+    if (value === 'letter') setActiveScene(null);
+    if (value === 'closing') setActiveScene(closing.root);
+  }
+  function stopMotion()       {
+    motionController?.abort(); motionController = null;
+    window.clearTimeout(sceneUpdateTimer);
+  }
+  function enterLookup()       {
+    stopMotion();
+    morph.setOpened(false);
+    starField.hide();
+    lookup.reset();
+    recipient = null;
+    setStage('lookup');
+    if (document.activeElement instanceof HTMLElement) document.activeElement.blur();
+  }
+  function finishLetter()       {
+    if (!recipient) return;
+    stopMotion();
+    morph.setOpened(true);
+    setStage('letter');
+    starField.hide();
+    // Đợi hình học giấy hoàn tất rồi đưa focus đến tiêu đề cho screen reader.
+    sceneUpdateTimer = window.setTimeout(() => letterView.focus(), motionReduced ? 30 : 750);
+  }
+  async function beginReveal(stt        )                {
+    if (stage !== 'lookup') return;
+    const match = recipientByStt.get(stt);
+    if (!match) return;
+    const letter = letters[match.letterId];
+    if (!letter) return;
+    recipient = match;
+    const theme = makeVisualSeed(stt);
+    morph.setRecipient(match.displayName, match.theme ? {
+      ...theme, accent: match.theme.accent, secondary: match.theme.secondary
+    } : theme);
+    letterView.render(match, letter);
+    recognizing.setAttribute('aria-labelledby', 'recognize-name');
+    recognizeName.id = 'recognize-name';
+    recognizeName.textContent = `Dành riêng cho ${match.displayName}`;
+    closing.setName(match.displayName);
+    starField.show(theme);
+    setStage('recognize');
+    if (motionReduced) { finishLetter(); return; }
+    starField.launchParticle(lookup.form, false);
+    const controller = new AbortController();
+    motionController = controller;
+    const { signal } = controller;
+    await wait(850, signal); if (signal.aborted) return;
+    shell.classList.add('star-recognized');
+    await wait(430, signal); if (signal.aborted) return;
+    morph.stage('envelope');
+    await wait(650, signal); if (signal.aborted) return;
+    morph.setOpened(true);
+    await wait(880, signal); if (signal.aborted) return;
+    shell.classList.remove('star-recognized');
+    finishLetter();
+  }
+  skipMotion.addEventListener('click', finishLetter);
+  function showClosing()       {
+    if (!recipient) return;
+    stopMotion();
+    setStage('closing');
+    closing.root.querySelector             ('#closing-title')?.focus({ preventScroll: true });
+  }
+  function notify(message        )       {
+    toast.textContent = message;
+    toast.classList.add('toast--visible');
+    window.clearTimeout(showToastTimer);
+    showToastTimer = window.setTimeout(() => toast.classList.remove('toast--visible'), 4000);
+  }
+  async function shareGift()                {
+    const url = new URL(window.location.pathname, window.location.origin).href;
+    const data = { title: 'GALAXY LETTERS — 08.03.2027', text: 'Một vũ trụ nhỏ, dành riêng cho bạn ✨', url };
+    if (navigator.share) {
+      try { await navigator.share(data); return; }
+      catch (error) {
+        if (error instanceof DOMException && error.name === 'AbortError') return;
+      }
+    }
+    if (navigator.clipboard?.writeText) {
+      try { await navigator.clipboard.writeText(url); notify('Đã sao chép đường dẫn món quà.'); return; }
+      catch { /* Fallback cho trình duyệt không cho quyền clipboard. */ }
+    }
+    const temporary = el('textarea');
+    temporary.value = url;
+    temporary.setAttribute('aria-label', 'Đường dẫn để chia sẻ');
+    temporary.style.position = 'fixed'; temporary.style.left = '-9999px';
+    document.body.append(temporary);temporary.select();
+    const copied = document.execCommand('copy');
+    temporary.remove();
+    notify(copied ? 'Đã sao chép đường dẫn món quà.' : `Hãy sao chép đường dẫn trên thanh địa chỉ để chia sẻ nhé.`);
+  }
+  const onKeydown = (event               ) => {
+    if (event.key === 'Escape' && stage === 'recognize') finishLetter();
+  };
+  window.addEventListener('keydown', onKeydown);
+  const unobserveMotion = observeReducedMotion((value) => {
+    motionReduced = value;
+    shell.classList.toggle('reduced-motion', value);
+    skipMotion.hidden = value || stage !== 'recognize';
+    if (value && stage === 'recognize') finishLetter();
+  });
+  setActiveScene(intro); // Ẩn semantic các scene khác ngay ở lần đầu, tránh screen reader đọc nhầm.
+  if (!eventConfig.enableIntro) enterLookup();
+  if (eventConfig.showCountdown) {
+    const countdown = el('div', 'countdown');
+    footer.prepend(countdown);
+    const moment = new Date('2027-03-07T17:00:00Z').getTime(); // 00:00 ngày 08/03 giờ Việt Nam
+    const update = () => {
+      const days = Math.ceil((moment - Date.now()) / 86400000);
+      countdown.textContent = days > 0 ? `Còn ${days} ngày đến 08.03.2027` : '';
+    };
+    update();const timer = window.setInterval(update, 60000);
+    window.addEventListener('pagehide', () => window.clearInterval(timer), { once: true });
+  }
+  // Một kiểm tra nhẹ ở runtime, hữu ích khi chủ repo chỉnh sửa dữ liệu.
+  if (recipients.length !== 24) console.warn('Số người nhận hiện khác 24, hãy kiểm tra dữ liệu trước khi phát hành.');
+  return () => {
+    stopMotion();unobserveMotion();galaxy.destroy();
+    window.removeEventListener('keydown', onKeydown);
+    window.clearTimeout(showToastTimer);
+    shell.remove();
+  };
+}
+
+
+// ---- main ----
+
+const root = document.querySelector             ('#app');
+if (!root) throw new Error('Không tìm thấy phần tử #app');
+mountApp(root);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+/* CẢNH 01 — điểm sáng thức dậy */
+.scene--intro .intro-inner{max-width:860px;margin-top:clamp(205px,35dvh,355px);margin-bottom:10px}
+.scene--intro .eyebrow{animation:rise-in 900ms ease both;animation-delay:230ms}
+.intro-title{font-family:var(--font-serif);font-size:clamp(38px,6.5vw,73px);font-weight:500;line-height:1.13;letter-spacing:-.045em;margin:0 auto 17px;text-wrap:balance;color:#fffaf9;text-shadow:0 0 35px #d0b9ff17;animation:rise-in 1200ms var(--ease) both;animation-delay:420ms}
+.intro-title .headline-italics{font-size:.94em}
+.intro-lead{font-size:clamp(14px,1.5vw,16px);max-width:525px;margin:0 auto 25px;line-height:1.83;font-weight:400;color:#c4bfda;animation:rise-in 1100ms ease both;animation-delay:630ms}
+.date-divider{display:flex;align-items:center;justify-content:center;gap:13px;margin:0 auto 29px;animation:rise-in 1200ms ease both;animation-delay:780ms}
+.divider-line{width:44px;height:1px;background:linear-gradient(90deg,transparent,#d3bbf08c)}
+.divider-line:last-child{transform:rotate(180deg)}
+.date-text{font-size:11px;letter-spacing:.33em;font-weight:650;color:var(--gold)}
+.start-btn{animation:rise-in 1100ms var(--ease) both;animation-delay:950ms}
+.skip-intro{display:block;margin:15px auto 0;opacity:.79;animation:rise-in 1000ms ease both;animation-delay:1100ms}
+
+/* CẢNH 02 — ô nhập STT trong khung kính mờ */
+.scene--lookup .lookup-inner{max-width:670px;margin-top:clamp(155px,23dvh,250px);margin-bottom:12px}
+.scene-title{font-family:var(--font-serif);font-weight:500;font-size:clamp(31px,4.65vw,53px);line-height:1.17;letter-spacing:-.038em;text-wrap:balance;margin:0 auto 18px;color:#fffafa}
+.scene-lead{font-size:14px;color:#c6bfdc;max-width:480px;line-height:1.8;margin:0 auto 30px}
+.lookup-form{width:min(430px,100%);margin:0 auto;padding:26px 25px 24px;display:flex;flex-direction:column;text-align:left;border:1px solid rgba(226,209,255,.22);border-radius:24px;background:linear-gradient(150deg,rgba(116,106,172,.15),rgba(37,38,86,.31) 70%,rgba(109,68,129,.13));box-shadow:0 18px 80px rgba(3,4,19,.26),inset 0 1px 0 rgba(255,255,255,.1);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.input-label{font-size:10px;font-weight:750;letter-spacing:.20em;color:#eee5fa;margin:0 0 13px}
+.input-row{display:flex;align-items:center;height:62px;border:1px solid rgba(216,200,251,.30);border-radius:14px;background:rgba(5,6,22,.48);overflow:hidden;transition:border-color 280ms,box-shadow 280ms}
+.input-row:focus-within{border-color:#e4c8ff;box-shadow:0 0 0 3px rgba(207,172,251,.15),0 0 22px rgba(167,135,232,.20)}
+.input-row:has(input[aria-invalid='true']){border-color:#ffb8d1}
+.input-prefix{display:grid;place-items:center;color:var(--lavender);padding-left:17px;padding-right:8px;font-size:20px}
+.stt-input{width:100%;height:100%;min-width:0;background:transparent;border:0;outline:none!important;color:var(--pearl);font-size:21px;font-weight:550;letter-spacing:.04em;padding:9px 14px;appearance:none}
+.stt-input::placeholder{color:#a39cb9;font-size:16px;font-weight:400}
+.input-hint{margin:11px 0 0;color:#a8a0bf;font-size:11px;line-height:1.5}
+.input-error{margin:0;color:#ffd6e9;font-size:12px;line-height:1.55;min-height:0}
+.input-error:not(:empty){padding-top:13px}
+.lookup-btn{width:100%;margin-top:23px;min-height:51px}
+.lookup-footnote{margin:23px auto 0;color:rgba(215,208,234,.6);font-size:11px;line-height:1.65}
+
+/* CẢNH 03 — các ngôi sao nối về ngôi sao đại diện */
+.scene--recognize .recognize-inner{max-width:680px;margin-top:clamp(300px,59dvh,585px)}
+.recognize-title{font-family:var(--font-serif);color:#f6eeff;font-weight:500;font-size:clamp(27px,4.8vw,47px);letter-spacing:-.03em;line-height:1.25;margin:0 0 13px;text-shadow:0 0 20px rgba(213,184,255,.25)}
+.recognize-sub{font-size:13px;line-height:1.7;color:#d7cee9;margin:0}
+.scene--recognize .eyebrow{color:var(--lavender)}
+
+/* CẢNH 06 — lời chúc cuối sau trang thư */
+.scene--closing .closing-inner{max-width:760px;margin-top:clamp(210px,37dvh,370px)}
+.closing-for{color:#d4baf5;letter-spacing:.15em;font-size:12px;margin:0 0 15px}
+.closing-title{font-family:var(--font-serif);font-weight:500;letter-spacing:-.038em;line-height:1.15;font-size:clamp(34px,5.7vw,61px);margin:0 auto 22px;text-wrap:balance}
+.closing-note{color:#c6c0de;line-height:1.75;font-size:14px;max-width:520px;margin:0 auto 24px}
+.closing-date{font-family:var(--font-serif);font-style:italic;color:#f7e2b9;font-size:16px;margin:0 auto 28px}
+.closing-back{margin:0 auto}
+.scene--closing::before{content:'';pointer-events:none;position:fixed;top:14dvh;left:calc(50% + 30px);width:140px;height:1px;transform-origin:left center;background:linear-gradient(90deg,#f4e8ffbb,#c5b0ff66,transparent);opacity:0;animation:trail-pass 2.9s ease-out 500ms 1 forwards;filter:drop-shadow(0 0 7px #e6cbff)}

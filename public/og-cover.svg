@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="a"><stop stop-color="#25225c"/><stop offset="1" stop-color="#060817"/></radialGradient>
+    <radialGradient id="b"><stop stop-color="#7e469c" stop-opacity=".35"/><stop offset="1" stop-color="#7e469c" stop-opacity="0"/></radialGradient>
+    <linearGradient id="g"><stop stop-color="#fff0c1"/><stop offset=".6" stop-color="#d4bcff"/><stop offset="1" stop-color="#90d9ff"/></linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#a)"/>
+  <ellipse cx="340" cy="290" rx="410" ry="300" fill="url(#b)"/>
+  <circle cx="1000" cy="200" r="260" fill="url(#b)"/>
+  <g fill="#fff0e8"><circle cx="190" cy="122" r="2"/><circle cx="321" cy="90" r="1.2"/><circle cx="1010" cy="86" r="2.2"/><circle cx="1100" cy="366" r="1.5"/><circle cx="800" cy="155" r="1.5"/><circle cx="156" cy="482" r="1.2"/><circle cx="950" cy="519" r="1"/><circle cx="500" cy="530" r="1.5"/></g>
+  <g fill="none" stroke="#b6a5e8" stroke-opacity=".4"><circle cx="600" cy="193" r="79"/><ellipse cx="600" cy="193" rx="118" ry="44" transform="rotate(-29 600 193)"/></g>
+  <path d="M600 131L615 178L664 193L615 207L600 256L585 207L537 193L585 178Z" fill="url(#g)"/>
+  <text x="600" y="365" fill="#faf6ff" text-anchor="middle" font-family="Georgia,serif" font-size="72" letter-spacing="5">GALAXY LETTERS</text>
+  <text x="600" y="418" fill="#dbc9f6" text-anchor="middle" font-family="sans-serif" font-size="25">Một vũ trụ nhỏ, dành riêng cho bạn.</text>
+  <text x="600" y="497" fill="#fff0c1" text-anchor="middle" font-family="sans-serif" font-size="19" letter-spacing="8">08 . 03 . 2027</text>
+</svg>

@@ -1,0 +1,17 @@
+:root {
+  color-scheme: dark;
+  --midnight: #060817;
+  --indigo: #111739;
+  --lavender: #d4bcff;
+  --rose: #ffc5e3;
+  --gold: #fff0c1;
+  --aurora: #90d9ff;
+  --pearl: #faf6ff;
+  --accent: #d4bcff;
+  --secondary: #90d9ff;
+  --ink: #342c4c;
+  --ink-muted: #686078;
+  --ease: cubic-bezier(.22,1,.36,1);
+  --font-sans: 'Avenir Next','Segoe UI',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+  --font-serif: 'Iowan Old Style','Baskerville','Palatino Linotype','Book Antiqua',Georgia,serif;
+}

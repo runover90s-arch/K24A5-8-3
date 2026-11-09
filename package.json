@@ -1,0 +1,19 @@
+{
+  "name": "galaxy-letters-8-3-2027",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Một vũ trụ nhỏ dành riêng cho 24 bạn nữ - ngày 8/3/2027",
+  "engines": { "node": ">=22.13.0" },
+  "scripts": {
+    "build": "node scripts/build.mjs && node scripts/build-standalone.mjs",
+    "standalone": "node scripts/build-standalone.mjs",
+    "dev": "node scripts/dev.mjs",
+    "preview": "node scripts/serve.mjs",
+    "test": "npm run build && node --test tests/*.test.mjs",
+    "check": "npm run test"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "license": "MIT"
+}
